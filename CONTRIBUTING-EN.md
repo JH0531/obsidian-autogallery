@@ -1,7 +1,7 @@
 # Contributing Guide
 
 > **Language**: This document is the English version. The Chinese version is [CONTRIBUTING.md](CONTRIBUTING.md).
-> User documentation: [README.md](README.md) (Chinese) · [README-EN.md](README-EN.md) (English)
+> User documentation: [README-ZH.md](README-ZH.md) (Chinese) · [README.md](README.md) (English)
 
 AutoGallery is an Obsidian image-layout plugin: it handles captions, automatic column widths, galleries, text wrapping and pagination in a unified way without rewriting Markdown image references or breaking the ability to edit body text, and it ships a PDF export pipeline that lays out consistently with the reading view.
 

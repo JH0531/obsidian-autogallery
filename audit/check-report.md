@@ -1,6 +1,6 @@
 # Showcase claim check
 
-Generated 2026-11-09T17:49:19.399Z · commit a2876c8
+Generated 2026-11-09T20:56:48.941Z · commit 9500e23
 
 **0 / 8 checks failed · 0 findings**
 
@@ -17,7 +17,7 @@ Generated 2026-11-09T17:49:19.399Z · commit a2876c8
 
 ## 断言台账中无被代码证伪的条目
 
-- 共 1541 条断言，0 条判为错误。
+- 共 1469 条断言，0 条判为错误。
 
 无失败项。
 
@@ -63,7 +63,7 @@ Generated 2026-11-09T17:49:19.399Z · commit a2876c8
 
 ## 事实表与当前提交一致
 
-- 当前 a2876c8。
+- 当前 9500e23。
 
 无失败项。
 

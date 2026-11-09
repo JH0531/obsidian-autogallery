@@ -105,8 +105,8 @@ const TASKS = [
     title: "修复 README",
     goal: "中英 README 的 PDF 段落与绝对化断言与代码一致。",
     acceptance: [
-      "README.md:16 为五类手柄；:82 写明对齐会记录宽度；:83 改为条件句；:126 区分两条失败路径。",
-      "README.md 与 README-EN.md 的 PDF 小节段数一致、行数差 ≤2。",
+      "README-ZH.md:16 为五类手柄；:82 写明对齐会记录宽度；:83 改为条件句；:126 区分两条失败路径。",
+      "README-ZH.md 与 README.md 的 PDF 小节段数一致、行数差 ≤2。",
       "README 不再出现「只改对齐」「自动回退」两种错误说法。"
     ],
     blocks: [

@@ -1,7 +1,7 @@
 # 贡献指南（Contributing Guide）
 
 > **语言 / Language**：本文档为中文版。英文版见 [CONTRIBUTING-EN.md](CONTRIBUTING-EN.md)。
-> 项目文档：[README.md](README.md)（中文） · [README-EN.md](README-EN.md)（English）
+> 项目文档：[README-ZH.md](README-ZH.md)（中文） · [README.md](README.md)（English）
 
 AutoGallery 是一个 Obsidian 图片排版插件：在不重写 Markdown 图片引用、不破坏正文编辑能力的前提下，统一处理 caption、自动栏宽、gallery、文字环绕与分页，并提供一条与阅读视图排版一致的 PDF 导出管线。
 

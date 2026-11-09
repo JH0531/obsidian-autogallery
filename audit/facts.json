@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-09T17:49:18.722Z",
+  "generatedAt": "2026-11-09T20:56:48.501Z",
   "plugin": {
     "id": "obsidian-autogallery",
-    "version": "0.1.0",
+    "version": "1.0.1",
     "minAppVersion": "1.5.0",
-    "commit": "a2876c8",
+    "commit": "9500e23",
     "testScript": false
   },
   "settings": [

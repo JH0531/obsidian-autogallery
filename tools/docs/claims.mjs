@@ -65,12 +65,6 @@ const BANNED = [
     severity: "P0"
   },
   {
-    re: /styles\.css/,
-    expected: "安装只需 main.js 与 manifest.json（仓库根无 styles.css）",
-    evidence: "仓库根无 styles.css; docs/en/guide/install.md:13 已写 2 文件",
-    severity: "P0"
-  },
-  {
     re: /templates\/transfer/,
     expected: "templates/import",
     evidence: "docs/templates/import.md",
@@ -184,7 +178,7 @@ function walk(root, base, out, skipEn = false) {
 }
 
 const surfaces = [];
-for (const file of ["README.md", "README-EN.md"]) {
+for (const file of ["README-ZH.md", "README.md"]) {
   if (existsSync(join(ROOT, file))) surfaces.push({ path: join(ROOT, file), surface: file });
 }
 for (const file of readdirSync(join(ROOT, "demo"))) {

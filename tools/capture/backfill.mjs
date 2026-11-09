@@ -22,7 +22,7 @@ const write = process.argv.includes("--write");
 const manifest = JSON.parse(readFileSync(path.join(vault, "media", "manifest.json"), "utf8"));
 const wanted = manifest.items.filter((item) => item.readme && item.status === "published" && item.file);
 
-const readmes = ["README.md", "README-EN.md"].map((name) => ({
+const readmes = ["README-ZH.md", "README.md"].map((name) => ({
   name,
   text: readFileSync(path.join(repo, name), "utf8")
 }));

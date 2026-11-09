@@ -2,7 +2,7 @@
 
 <h1><img src="assets/demo/logo.svg" width="48" height="48" alt="AutoGallery logo" style="vertical-align: middle; margin-right: 10px;">AutoGallery</h1>
 
-<p><a href="README-EN.md">English</a> · <a href="https://www.autogallery.run.place/zh/">在线文档</a> · <a href="CONTRIBUTING.md">贡献指南</a></p>
+<p><a href="README-ZH.md">中文</a> · <a href="https://www.autogallery.run.place/en/">Documentation</a> · <a href="CONTRIBUTING-EN.md">Contributing</a></p>
 
 <p>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/JH0531/obsidian-autogallery?style=flat-square&label=license" alt="License"></a>
@@ -12,45 +12,45 @@
   <a href="https://www.jsdelivr.com/package/gh/JH0531/obsidian-autogallery"><img src="https://img.shields.io/jsdelivr/gh/hm/JH0531/obsidian-autogallery?style=flat-square&cb=20261110" alt="jsDelivr hits"></a>
 </p>
 
-<img src="assets/demo/overview-zh-dark.webp" alt="AutoGallery 中文效果总览" width="1200">
+<img src="assets/demo/overview-en-dark.webp" alt="AutoGallery English overview" width="1200">
 
 <p align="center">
-  <a href="https://www.autogallery.run.place/zh/"><img src="assets/demo/buttons/docs-zh.svg" width="280" height="56" alt="在线文档"></a>
+  <a href="https://www.autogallery.run.place/en/"><img src="assets/demo/buttons/docs-en.svg" width="280" height="56" alt="Documentation"></a>
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://github.com/JH0531/obsidian-autogallery/archive/refs/heads/demo-vault.zip"><img src="assets/demo/buttons/demo-zh.svg" width="280" height="56" alt="中文示例库"></a>
+  <a href="https://github.com/JH0531/obsidian-autogallery/archive/refs/heads/demo-en-vault.zip"><img src="assets/demo/buttons/demo-en.svg" width="280" height="56" alt="English demo vault"></a>
 </p>
 
 </div>
 
-## 简介
+## Overview
 
-AutoGallery 处理 Obsidian 笔记里的图片排版：连续图片自动成行，单图按比例取宽，文字可以绕排，裁剪只记录比例，PDF 导出与阅读视图保持一致。
+AutoGallery handles image layout in Obsidian notes: consecutive images become rows, single images take their width from their aspect ratio, text can wrap around them, crops are stored as ratios, and PDF export follows the reading view.
 
-它不改写 Markdown 图片链接，也不写入像素尺寸；效果来自图片说明里的参数与可导出的布局模板。停用插件后，笔记仍按原生方式显示。
+It never rewrites Markdown image links or stores pixel dimensions. Layout comes from parameters in the image caption and from exportable layout templates. Disable the plugin and the note renders natively again.
 
-- 适合图文笔记、作品集、教程和需要打印的文档。
-- 不提供像素级画布或图片编辑功能。
+- Built for illustrated notes, portfolios, tutorials and documents meant to be printed.
+- Not a pixel-level canvas or an image editor.
 
-## 安装
+## Install
 
-要求 Obsidian 1.5 或更高版本；桌面端与移动端共用同一份插件。
+Requires Obsidian 1.5 or newer; desktop and mobile share the same build.
 
-1. 社区市场（上架后）：设置 → 第三方插件 → 关闭安全模式 → 浏览 → 搜索 **AutoGallery** → 安装并启用。
-2. 手动安装：从 [Releases](https://github.com/JH0531/obsidian-autogallery/releases) 下载 `main.js` 与 `manifest.json`，放入库的插件目录，重启 Obsidian。
+1. Community plugins (after listing): Settings → Community plugins → turn off Safe mode → Browse → search **AutoGallery** → Install and enable.
+2. Manual: download `main.js` and `manifest.json` from [Releases](https://github.com/JH0531/obsidian-autogallery/releases), place them in the plugin folder, then restart Obsidian.
 
 ```text
-<库>/.obsidian/plugins/obsidian-autogallery/
+<vault>/.obsidian/plugins/obsidian-autogallery/
   main.js
   manifest.json
 ```
 
-安装只需要这两个文件，没有额外的 `styles.css`。装好后设置页会出现 AutoGallery 一栏；连续写两三行图片应变成一行画廊。
+These two files are all that is needed; there is no `styles.css`. Once enabled, an AutoGallery section appears in Settings, and two or three consecutive image lines should become one gallery row.
 
-[社区市场安装](https://www.autogallery.run.place/zh/guide/install#从社区市场安装) · [手动安装](https://www.autogallery.run.place/zh/guide/install#手动安装)
+[Community install](https://www.autogallery.run.place/en/guide/install#from-the-community-plugins) · [Manual install](https://www.autogallery.run.place/en/guide/install#manually)
 
-## 五分钟上手
+## Quick start
 
-三行图片之间不留空行，就会排成一行等高画廊；空行会结束画廊。
+Three image lines with no blank lines between them become one row of equal height. A blank line ends the gallery.
 
 ```markdown
 ![[photo-01.jpg]]
@@ -58,121 +58,116 @@ AutoGallery 处理 Obsidian 笔记里的图片排版：连续图片自动成行�
 ![[photo-03.jpg]]
 ```
 
-两图并排时行高更高，细节更清楚：
+Two images side by side get a taller row, so details stay readable:
 
 ```markdown
 ![[photo-04.jpg]]
 ![[photo-05.jpg]]
 ```
 
-三个最常用的操作：
+Three operations cover most edits:
 
-- 让某张图独占一行：用正文或标题隔开，或写 `ag:isolate`。
-- 指定每行张数：在组内第一张写 `ag:rows=2,2`。
-- 改单图宽度：在实时预览里拖右下角，松开后写入 `ag:width`。
+- Give one image its own row: separate it with body text or a heading, or write `ag:isolate`.
+- Set images per row: write `ag:rows=2,2` on the first image of the group.
+- Change a single image's width: drag its bottom-right grip in Live Preview; `ag:width` is written on release.
 
-完整教程：[五分钟上手](https://www.autogallery.run.place/zh/guide/quick-start) · [三个常用操作](https://www.autogallery.run.place/zh/guide/quick-start#三个常用操作)
+Full tutorial: [Quick start](https://www.autogallery.run.place/en/guide/quick-start) · [Three common operations](https://www.autogallery.run.place/en/guide/quick-start#three-common-operations)
 
-## 五个核心概念
+## Five core concepts
 
-1. **分组看源码，不看屏幕**：[分组规则](https://www.autogallery.run.place/zh/gallery/grouping#规则表)
-2. **两张以上连续图片一定是画廊**：[行切分](https://www.autogallery.run.place/zh/gallery/rows#五张-自动分成-3-2)
-3. **单图宽度由比例算出**：[宽度路由](https://www.autogallery.run.place/zh/single/width#四档比例)
-4. **声明越近，优先级越高**：图片参数 > 模板 > 全局设置；[参数语法](https://www.autogallery.run.place/zh/annotations/syntax#语法规则)
-5. **容器决定能力**：列表、表格、callout 的规则不同；[嵌套作用域](https://www.autogallery.run.place/zh/annotations/scopes#能力矩阵)
+1. **Grouping reads the source, not the screen**: [Grouping rules](https://www.autogallery.run.place/en/gallery/grouping#rules)
+2. **Two or more adjacent images are always a gallery**: [Row splitting](https://www.autogallery.run.place/en/gallery/rows#five-images-automatically-3-2)
+3. **A single image gets its width from its ratio**: [Width routing](https://www.autogallery.run.place/en/single/width#the-four-ratios)
+4. **The closer the declaration, the higher the priority**: image parameters > template > global settings; [Annotation syntax](https://www.autogallery.run.place/en/annotations/syntax#syntax-rules)
+5. **The container decides what is possible**: lists, tables and callouts behave differently; [Nested scopes](https://www.autogallery.run.place/en/annotations/scopes#capability-matrix)
 
-完整解释：[五个核心概念](https://www.autogallery.run.place/zh/guide/concepts)
+Full explanation: [Five core concepts](https://www.autogallery.run.place/en/guide/concepts)
 
-## 能力地图
+## Capability map
 
-按工作流分组；每组对应文档站的一个栏目。
+Grouped by workflow; each group maps to one section of the documentation.
 
-**画廊** — 连续图片自动成行；`ag:rows` 切分、`ag:group` 锁定；行高上限与孤儿图片；五类手柄。
-[分组](https://www.autogallery.run.place/zh/gallery/grouping#规则表) · [行切分](https://www.autogallery.run.place/zh/gallery/rows#五张-自动分成-3-2) · [行高与孤儿](https://www.autogallery.run.place/zh/gallery/height#行高上限) · [画廊手柄](https://www.autogallery.run.place/zh/gallery/handles#五类手柄)
+**Galleries** — consecutive images form rows; `ag:rows` splits them and `ag:group` locks a row; row-height ceilings and orphan images; five kinds of handle.
+[Grouping](https://www.autogallery.run.place/en/gallery/grouping#rules) · [Row splitting](https://www.autogallery.run.place/en/gallery/rows#five-images-automatically-3-2) · [Height and orphans](https://www.autogallery.run.place/en/gallery/height#row-height-ceiling) · [Gallery handles](https://www.autogallery.run.place/en/gallery/handles#five-kinds-of-handle)
 
-**单图** — 按比例自动取宽；左右浮动与文字绕排；拖角标改宽、箭头对齐、一键复位。
-[宽度路由](https://www.autogallery.run.place/zh/single/width#四档比例) · [浮动与绕排](https://www.autogallery.run.place/zh/single/float#文字绕排) · [拖宽、对齐与复位](https://www.autogallery.run.place/zh/single/resize#拖角标)
+**Single images** — automatic width from ratio; left/right floats and text wrapping; drag to resize, align with arrows, reset in one click.
+[Width routing](https://www.autogallery.run.place/en/single/width#the-four-ratios) · [Float and wrap](https://www.autogallery.run.place/en/single/float#text-wrapping) · [Resize, align, reset](https://www.autogallery.run.place/en/single/resize#the-corner-grip)
 
-**参数与裁剪** — 十个 `ag:` 参数；按比例裁剪任意局部；列表/表格/callout 的作用域；说明对话框与重置。
-[参数语法](https://www.autogallery.run.place/zh/annotations/syntax#十个参数) · [裁剪与取景](https://www.autogallery.run.place/zh/annotations/crop#裁剪对话框) · [嵌套作用域](https://www.autogallery.run.place/zh/annotations/scopes#能力矩阵) · [说明与重置](https://www.autogallery.run.place/zh/annotations/dialog#图片说明对话框)
+**Annotations and crops** — ten `ag:` parameters; crop any region by ratio; scope rules for lists, tables and callouts; caption dialog and reset.
+[Annotation syntax](https://www.autogallery.run.place/en/annotations/syntax#the-ten-parameters) · [Cropping](https://www.autogallery.run.place/en/annotations/crop#the-crop-dialog) · [Nested scopes](https://www.autogallery.run.place/en/annotations/scopes#capability-matrix) · [Dialog and reset](https://www.autogallery.run.place/en/annotations/dialog#the-caption-dialog)
 
-**模板与路由** — 用区间规则定义整套宽度节奏；导入/导出模板；按 frontmatter 切换。
-[布局模板](https://www.autogallery.run.place/zh/templates/profiles#规则模型) · [导入与导出](https://www.autogallery.run.place/zh/templates/import#覆盖式更新) · [Frontmatter 路由](https://www.autogallery.run.place/zh/templates/routing#一条路由的结构)
+**Templates and routing** — define a whole width rhythm with range rules; import/export templates; switch by frontmatter.
+[Layout templates](https://www.autogallery.run.place/en/templates/profiles#rule-model) · [Import and export](https://www.autogallery.run.place/en/templates/import#overwrite-semantics) · [Frontmatter routing](https://www.autogallery.run.place/en/templates/routing#anatomy-of-a-route)
 
-**PDF 导出** — 按纸张重新排版；整页/分页预览；页边距、页码与分页优化。
-[导出对话框](https://www.autogallery.run.place/zh/export/dialog#两种预览) · [分页优化](https://www.autogallery.run.place/zh/export/pagination) · [失败与排查](https://www.autogallery.run.place/zh/export/troubleshooting#症状对照表)
+**PDF export** — reflow to paper size; layout and paginated previews; margins, page numbers and pagination.
+[Export dialog](https://www.autogallery.run.place/en/export/dialog#two-previews) · [Pagination](https://www.autogallery.run.place/en/export/pagination) · [Troubleshooting](https://www.autogallery.run.place/en/export/troubleshooting#symptom-table)
 
-**参考** — 设置项默认值；命令与入口；兼容性；常见误解。
-[设置项总表](https://www.autogallery.run.place/zh/reference/settings#画廊) · [命令](https://www.autogallery.run.place/zh/reference/commands#四条命令) · [兼容性](https://www.autogallery.run.place/zh/reference/compatibility#版本与平台) · [容易误解的行为](https://www.autogallery.run.place/zh/reference/pitfalls)
+**Reference** — settings defaults; commands and entry points; compatibility; common misreadings.
+[Settings](https://www.autogallery.run.place/en/reference/settings#gallery) · [Commands](https://www.autogallery.run.place/en/reference/commands#the-four-commands) · [Compatibility](https://www.autogallery.run.place/en/reference/compatibility#versions-and-platforms) · [Pitfalls](https://www.autogallery.run.place/en/reference/pitfalls)
 
-## 常用参数与手势
+## Annotations and gestures
 
-参数写在图片说明里，用 `|` 分隔；不写就走自动路由。标准 Markdown 与 `![[...]]` 都支持。
+Parameters live in the image caption, separated by `|`. Omit them and automatic routing applies. Both standard Markdown and `![[...]]` embeds work.
 
-| 参数 | 常用值 | 作用 |
+| Parameter | Common values | Effect |
 | --- | --- | --- |
-| `ag:layout` | `auto` `gallery` `float` `center` | 覆盖自动布局 |
-| `ag:side` | `left` `right` `center` | 指定对齐与浮动方向 |
-| `ag:width` | `10%`–`100%` | 指定图片或浮动单元宽度 |
-| `ag:crop` + `ag:top` | `16:9` + `0:50:0` | 裁剪比例与顶边位置 |
-| `ag:rows` / `ag:group` | `3,2` / `7` | 手写行切分 / 锁定整行 |
-| `ag:isolate` / `ag:exclude` | 标记 | 切断分组 / 交还原生渲染 |
+| `ag:layout` | `auto` `gallery` `float` `center` | Override automatic layout |
+| `ag:side` | `left` `right` `center` | Alignment and float side |
+| `ag:width` | `10%`–`100%` | Width of an image or float unit |
+| `ag:crop` + `ag:top` | `16:9` + `0:50:0` | Crop ratio and top-edge position |
+| `ag:rows` / `ag:group` | `3,2` / `7` | Split rows / lock a row |
+| `ag:isolate` / `ag:exclude` | flag | Cut grouping / hand back to Obsidian |
 
 ```markdown
-![[cover.jpg|封面|ag:side=center|ag:width=61%]]
-![[chart.png|图表|ag:crop=16:9|ag:top=0:50:0]]
-![独立图片|ag:isolate](images/one.png)
+![[cover.jpg|Cover|ag:side=center|ag:width=61%]]
+![[chart.png|Chart|ag:crop=16:9|ag:top=0:50:0]]
+![Standalone|ag:isolate](images/one.png)
 ```
 
-十个参数的完整说明：[参数语法](https://www.autogallery.run.place/zh/annotations/syntax#十个参数)。
+All ten parameters: [Annotation syntax](https://www.autogallery.run.place/en/annotations/syntax#the-ten-parameters).
 
-**手势**（实时预览）
+**Gestures** (Live Preview)
 
-- 拖右下角改宽度，双击复位 → [拖角标](https://www.autogallery.run.place/zh/single/resize#拖角标)
-- 拖分隔条改列宽，拖行底横条改行高 → [五类手柄](https://www.autogallery.run.place/zh/gallery/handles#五类手柄)
-- 两侧按钮交换/并入，链接按钮锁定整行 → [锁定整行](https://www.autogallery.run.place/zh/gallery/handles#锁定整行)
-- 图片空余侧的箭头切换对齐 → [对齐箭头](https://www.autogallery.run.place/zh/single/resize#对齐箭头)
+- Drag the bottom-right grip to resize; double-click to reset → [Corner grip](https://www.autogallery.run.place/en/single/resize#the-corner-grip)
+- Drag a divider to change column widths, or the bar under a row to change its height → [Five handles](https://www.autogallery.run.place/en/gallery/handles#five-kinds-of-handle)
+- Use the side buttons to swap or merge, and the link button to lock a row → [Locking a row](https://www.autogallery.run.place/en/gallery/handles#locking-a-row)
+- Use the arrows in the free space beside an image to change alignment → [Alignment arrows](https://www.autogallery.run.place/en/single/resize#alignment-arrows)
 
-## PDF 导出
+## PDF export
 
-命令面板执行 **Export PDF (AutoGallery)**，或在文件右键菜单导出。插件在主窗口按纸张尺寸渲染、测量并分页。
+Run **Export PDF (AutoGallery)** from the command palette, or export from the file context menu. The plugin renders in the main window, measures against the paper size, and paginates.
 
-- **两种预览**：版式预览看连续排版，分页预览看真实页边界；页边距、页码与标题分页可即时核对。
-- **可调项**：纸张、方向、边距预设与奇偶页镜像、缩放、页眉页脚页码。
-- **分页**：画廊行不拆页，单图可贴底压缩，标题可另起一页，末页孤行可回收。
+- **Two previews**: layout preview shows continuous flow; paginated preview shows real page boundaries, margins, page numbers and heading breaks.
+- **Controls**: paper size, orientation, margin presets and mirrored margins, scale, header/footer page numbers.
+- **Pagination**: gallery rows never split, a single image can shrink to the page foot, headings can start a page, and trailing orphan lines are pulled back.
 
-[导出对话框](https://www.autogallery.run.place/zh/export/dialog#两种预览) · [分页优化](https://www.autogallery.run.place/zh/export/pagination) · [失败与排查](https://www.autogallery.run.place/zh/export/troubleshooting#症状对照表)
+[Export dialog](https://www.autogallery.run.place/en/export/dialog#two-previews) · [Pagination](https://www.autogallery.run.place/en/export/pagination) · [Troubleshooting](https://www.autogallery.run.place/en/export/troubleshooting#symptom-table)
 
-## 开发与贡献
+## Development
 
 ```bash
 npm install
 npm run build
 ```
 
-构建产物是根目录的 `main.js`；把它和 `manifest.json` 复制到测试库的 `.obsidian/plugins/obsidian-autogallery/`，重载插件即可。仓库没有测试脚本，静态检查用 `npm run build`、`git diff --check` 与 `npm run check:docs`。
+The build output is `main.js` in the repository root. Copy it and `manifest.json` into a test vault at `.obsidian/plugins/obsidian-autogallery/` and reload the plugin. There is no test script; static checks are `npm run build`, `git diff --check` and `npm run check:docs`.
 
-渲染管线与架构约束见 [CONTRIBUTING.md](CONTRIBUTING.md#architecture)；设计推导见 [`specifications/`](specifications/)。提交前请读[贡献指南](CONTRIBUTING.md)。
+The rendering pipeline and architectural constraints are in [CONTRIBUTING-EN.md](CONTRIBUTING-EN.md#architecture); design notes live in [`specifications/`](specifications/). Read the [contributing guide](CONTRIBUTING-EN.md) before opening a pull request.
 
-## 参考与致谢
+## Credits
 
-- [Adjustable Media](https://github.com/Yi-luo-hua/obsidian-adjustable-media) — 布局块与媒体排版思路。
-- [Better Export PDF](https://github.com/l1xnan/obsidian-better-export-pdf) — PDF 预览、页眉页脚与页码模板。
+- [Adjustable Media](https://github.com/Yi-luo-hua/obsidian-adjustable-media) — layout blocks and media typography.
+- [Better Export PDF](https://github.com/l1xnan/obsidian-better-export-pdf) — PDF preview, headers/footers and page-number templates.
 
-完整变更见 [Changelog](https://www.autogallery.run.place/zh/changelog)；文档全貌见 [文档地图](https://www.autogallery.run.place/zh/guide/map)。
+Full changes: [Changelog](https://www.autogallery.run.place/en/changelog); the complete map: [Documentation map](https://www.autogallery.run.place/en/guide/map).
 
-## 支持
+## Support
 
-如果 AutoGallery 节省了你的时间，可以通过以下方式支持开发：
+If AutoGallery saves you time, you can support its development:
 
 - [Ko-fi](https://ko-fi.com/jh0531)
-- [个人赞助页（微信、支付宝、PayPal）](https://www.opensponsor.dpdns.org/)
+- [Personal funding website (WeChat, Alipay, PayPal)](https://www.opensponsor.dpdns.org/)
 
-<details>
-<summary>微信赞赏码</summary>
-<img src="assets/mm_reward_qrcode.png" width="220" alt="微信赞赏码">
-</details>
+## License
 
-## 许可证
-
-本项目根据 GNU 通用公共许可证第 3 版或更高版本（GPL-3.0-or-later）授权，完整条款见 [LICENSE](LICENSE)。
+This project is licensed under the GNU General Public License v3.0 or later (GPL-3.0-or-later). See [LICENSE](LICENSE) for the full text.
