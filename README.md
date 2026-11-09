@@ -1,6 +1,6 @@
 <div align="center">
 
-<h1><img src="assets/demo/logo.svg" width="48" height="48" alt="AutoGallery logo" style="vertical-align: middle; margin-right: 10px;">AutoGallery</h1>
+<h1><img src="assets/demo/logo.svg" width="48" height="48" alt="AutoGallery logo" align="absmiddle">&nbsp;AutoGallery</h1>
 
 <p><a href="README-ZH.md">中文</a> · <a href="https://www.autogallery.run.place/en/">Documentation</a> · <a href="CONTRIBUTING-EN.md">Contributing</a></p>
 
