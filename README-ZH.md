@@ -15,9 +15,13 @@
 <img src="assets/demo/overview-zh-dark.webp" alt="AutoGallery 中文效果总览" width="1200">
 
 <p align="center">
-  <a href="https://www.autogallery.run.place/zh/"><img src="assets/demo/buttons/docs-zh.svg" width="280" height="56" alt="在线文档"></a>
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://github.com/JH0531/obsidian-autogallery/archive/refs/heads/demo-vault.zip"><img src="assets/demo/buttons/demo-zh.svg" width="280" height="56" alt="中文示例库"></a>
+  <a href="https://www.autogallery.run.place/zh/"><img src="assets/demo/buttons/docs-zh.svg" width="190" height="64" alt="在线文档"></a>
+  &nbsp;&nbsp;
+  <a href="https://github.com/JH0531/obsidian-autogallery/archive/refs/heads/demo-vault.zip"><img src="assets/demo/buttons/demo-zh.svg" width="190" height="64" alt="中文示例库"></a>
+  &nbsp;&nbsp;
+  <a href="https://ko-fi.com/jh0531"><img src="assets/demo/buttons/kofi.svg" width="190" height="64" alt="Ko-fi"></a>
+  &nbsp;&nbsp;
+  <a href="https://www.opensponsor.dpdns.org/"><img src="assets/demo/buttons/sponsor-zh.svg" width="190" height="64" alt="赞助（微信、支付宝、PayPal）"></a>
 </p>
 
 </div>
