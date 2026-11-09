@@ -127,6 +127,8 @@ Chinese source text with pinyin or English.
 
 ---
 
+<a id="architecture"></a>
+
 ## 4. Core architectural constraints (read before changing anything)
 
 Each rule below corresponds to a class of shipped defect. `AGENTS.md` and `specifications/` contain the full derivation;
@@ -213,6 +215,15 @@ a single gallery cell and shrinks to a few hundred pixels.
   and **a single invalid entry rejects the whole file** — nothing is partially written.
 - After the plugin is disabled, Obsidian's native image markup and styles must be restored.
 - An `ag:exclude` image keeps its native rendering; `ag:isolate` cuts the grouping before and after.
+
+### 4.8 Rendering pipeline at a glance
+
+- The reading view uses `registerMarkdownPostProcessor` to take over sections Obsidian has already produced. It only restyles existing blocks and captions; it never moves body nodes. Each section records its source path, and the MutationObserver is paused during cleanup and re-layout.
+- File switches, active leaf/tab changes, view layout changes, settings saves and plugin reloads all schedule a refresh. A refresh disposes the previous section's cleanup function and resets the alternating-float index; it schedules the refresh rather than handling paragraphs that may still be detached.
+- A refresh preserves the reading-view scroll anchor. If the view was at the bottom before the refresh, it is repositioned to the bottom once, after the new document height is known.
+- Live Preview uses CodeMirror 6 `StateField`, `ViewPlugin` and line decorations. Image lines stay native `.cm-line`; styles are applied in a single decoration transaction, `EditorView.requestMeasure()` updates geometry, and effects are cleared when lines leave the viewport or the file changes. Source mode restores the native layout.
+- Gallery row widths are allocated from original aspect ratios: `rowHeight = (containerWidth - gap * (count - 1)) / sum(aspectRatios)`, `imageWidth = rowHeight * aspectRatio`.
+- Single-image defaults live in `src/config.json`: centre ratio `1.5`, left exponent `2.0`, right exponent `1.5`, output range `[0.2, 1]`. The “width gain” and “median ratio” settings override them.
 
 ---
 

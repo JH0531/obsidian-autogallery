@@ -125,6 +125,8 @@ esbuild.config.mjs 打包配置（cjs、target es2018、platform browser）
 
 ---
 
+<a id="architecture"></a>
+
 ## 4. 核心架构约束（改动前必读）
 
 以下每条都对应一类线上缺陷。它们在 `AGENTS.md` 与 `specifications/` 中有完整推导，这里给出压缩版。
@@ -192,6 +194,15 @@ Obsidian 会把 60% 渲染成「60% 的 60%」。
   不写入部分配置。
 - 停用插件后必须还原 Obsidian 原生的图片标记与样式。
 - `ag:exclude` 的图片保留原样；`ag:isolate` 切断前后分组。
+
+### 4.8 渲染管线速览
+
+- 阅读视图用 `registerMarkdownPostProcessor` 接管 Obsidian 已生成的 section，只修改现有块的样式与 caption，不搬移正文节点；section 记录源文件路径，清理与重排期间暂停 MutationObserver。
+- 文件切换、活动叶/标签、视图布局、设置保存与插件重载都会触发刷新；刷新释放旧 section 的清理函数并重置交替浮动索引，只安排刷新，不直接处理可能仍处于 detached 状态的段落。
+- 刷新保存阅读视图的滚动锚点；若刷新前位于底部，则在当前布局帧完成后按新文档高度一次性定位到底部。
+- 实时阅览使用 CodeMirror 6 的 `StateField`、`ViewPlugin` 与 line decorations；图片行保持原生 `.cm-line`，样式通过单一 decoration transaction 应用，几何变化后调用 `EditorView.requestMeasure()`；离开视口或切换文件时清除，Source 模式恢复原生布局。
+- gallery 行宽按原始宽高比分配：`rowHeight = (containerWidth - gap * (count - 1)) / sum(aspectRatios)`，`imageWidth = rowHeight * aspectRatio`。
+- 单图默认参数在 `src/config.json` 中维护：中心比例 `1.5`、左幂 `2.0`、右幂 `1.5`、输出范围 `[0.2, 1]`；设置页的「栏宽增益」与「中位比例」会覆盖这些默认值。
 
 ---
 

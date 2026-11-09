@@ -5,5 +5,10 @@
   "minAppVersion": "1.5.0",
   "description": "Automatically arrange images and captions in notes.",
   "author": "Jasper Hwang",
+  "fundingUrl": {
+    "Ko-fi": "https://ko-fi.com/jh0531",
+    "PayPal": "https://paypal.me/Jasperhjx",
+    "支付宝, 微信": "https://www.opensponsor.dpdns.org/"
+  },
   "isDesktopOnly": false
 }

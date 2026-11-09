@@ -1,198 +1,178 @@
-# AutoGallery
+<div align="center">
 
-> **语言 / Language**：本文档为中文版。English version [README-EN.md](README-EN.md)。
-> 贡献指南：[CONTRIBUTING.md](CONTRIBUTING.md)（中文） · [CONTRIBUTING-EN.md](CONTRIBUTING-EN.md)（English）
+<h1><img src="assets/demo/logo.svg" width="48" height="48" alt="AutoGallery logo" style="vertical-align: middle; margin-right: 10px;">AutoGallery</h1>
 
-## 目的
+<p><a href="README-EN.md">English</a> · <a href="https://www.autogallery.run.place/zh/">在线文档</a> · <a href="CONTRIBUTING.md">贡献指南</a></p>
 
-AutoGallery 是一个 Obsidian 图片排版插件。插件的开发目的，是在不改写 Markdown 图片引用、不破坏正文编辑能力的前提下，统一处理图片 caption、自动栏宽、gallery、文字环绕与分页，并提供一条与阅读视图排版一致的 PDF 导出管线。它同时支持阅读视图和实时阅览视图，并保留 Obsidian 原生图片链接的编辑与恢复能力。
+<p>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/JH0531/obsidian-autogallery?style=flat-square" alt="License"></a>
+  <a href="https://github.com/JH0531/obsidian-autogallery/releases"><img src="https://img.shields.io/github/v/release/JH0531/obsidian-autogallery?style=flat-square" alt="Version"></a>
+  <a href="https://github.com/JH0531/obsidian-autogallery/stargazers"><img src="https://img.shields.io/github/stars/JH0531/obsidian-autogallery?style=flat-square" alt="Stars"></a>
+  <a href="https://github.com/JH0531/obsidian-autogallery/graphs/contributors"><img src="https://img.shields.io/github/contributors/JH0531/obsidian-autogallery?style=flat-square" alt="Contributors"></a>
+  <a href="https://www.jsdelivr.com/package/gh/JH0531/obsidian-autogallery"><img src="https://img.shields.io/jsdelivr/gh/hm/JH0531/obsidian-autogallery?style=flat-square" alt="jsDelivr hits"></a>
+</p>
 
-## 功能
+<img src="assets/demo/overview-zh-dark.webp" alt="AutoGallery 中文效果总览" width="1200">
 
-- `auto` 是全局默认路由，不需要 YAML frontmatter 即可生效。
-- 单图根据图片宽高比计算栏宽；比例经过 `[0.2, 5]` 截断后使用分段幂函数映射到 `[0.2, 1]`。自动宽度超过浮动阈值时会居中显示计算宽度，不会回退为整栏宽；默认增益使用 `src/config.json` 的 `qLeft/qRight`。
-- 自动浮动图片会在宽高比计算后按实际图片、caption 和文本行高做一次边界微调，减少浮动区尾部只占小部分行高造成的额外空白；手动 `ag:width` 不会被改写。
-- 图片组自动构建 gallery；支持 2-15 张的最大并列数、最小/最大行高、孤儿图片高度上限和图片间距，垂直间距沿用 Obsidian 原生段落 margin。
-- 画廊行自带五类手柄：行底横条调整行高、格间分隔条调整栏宽、子图两侧按钮前后交换、行首/行尾按钮并入相邻行、右下角链接按钮锁定/解除整行。手势只改写画幅比例（`ag:crop`）或行绑定（`ag:group`），不保存像素几何，也不自动写 `ag:rows`，抬手一次提交、一次撤销。
-- 单图可自动居中或左右浮动；浮动遇到标题、代码块、数学块、图片、表格、引用/callout 时终止。
-- caption 始终保留在图片单元内，并按图片单元对齐。
-- `ag:exclude` 完全交给 Obsidian 原生渲染；`ag:isolate` 从 gallery 中排除并切断前后分组。
-- 阅读视图支持 frontmatter 路由和可导入/导出的布局配置；内置 `auto` 不可删除、不可重命名，也不会被导入覆盖。
-- 设置页按「基础 / 画廊 / 栏宽 / PDF / 浮动截止 / 配置管理 / 路由」分区，目录吸顶并随滚动高亮；目录末格的搜索按钮可展开查找行，输入即匹配、回车或方向键在结果间移动，保存后实时预览与阅读视图立即重排。
-- 可选图片裁剪：不写裁剪参数就完整显示；裁剪框由画幅比例与顶边归一化坐标共同定位，可精确取画面中的任意局部区域。
-- 实时预览直接使用 Obsidian 原生右下角角标调宽，拖动等比缩放并写回 `ag:width`；双击角标恢复自动宽度。调宽会固定当前对齐，居中图片不会因为变窄而跳到一侧。
-- 图片空余一侧常驻靠左/靠右箭头，点击即写入 `ag:side`；居中图片两侧各显示一个。
-- 图片操作区提供“自由剪裁”入口：整图预览，拉杆只移动所指的边，Shift 锁定比例、Alt 中心对称，保存后只写标注参数。
-- 独立的 PDF 导出管线：在 Obsidian 主窗口中按纸张尺寸渲染、测量并分页，图片栏宽、浮动、gallery、标题分页与孤行控制完整生效；支持整页/分页两种预览、页边距预设与奇偶页镜像边距、页眉页脚页码。
+<table>
+  <tr>
+    <td align="center" width="48%"><a href="https://www.autogallery.run.place/zh/"><img src="assets/demo/buttons/docs-zh.svg" width="280" height="56" alt="在线文档"></a></td>
+    <td width="4%">&nbsp;</td>
+    <td align="center" width="48%"><a href="https://github.com/JH0531/obsidian-autogallery/archive/refs/heads/demo-vault.zip"><img src="assets/demo/buttons/demo-zh.svg" width="280" height="56" alt="中文示例库"></a></td>
+  </tr>
+</table>
 
-## 使用方法
+</div>
 
-### 图片参数
+## 简介
 
-参数写在图片说明字段中：
+AutoGallery 处理 Obsidian 笔记里的图片排版：连续图片自动成行，单图按比例取宽，文字可以绕排，裁剪只记录比例，PDF 导出与阅读视图保持一致。
 
-```markdown
-![封面|ag:side=centre|ag:width=61%](assets/cover.jpg)
-![示例|ag:layout=float|ag:side=right|ag:width=40%|ag:gap=12px](assets/example.png)
-![独立图片|ag:isolate](assets/one.png)
-![原生图片|ag:exclude](assets/native.png)
-```
+它不改写 Markdown 图片链接，也不写入像素尺寸；效果来自图片说明里的参数与可导出的布局模板。停用插件后，笔记仍按原生方式显示。
 
-支持的参数包括：
+- 适合图文笔记、作品集、教程和需要打印的文档。
+- 不提供像素级画布或图片编辑功能。
 
-| 参数 | 值 | 作用 |
-| --- | --- | --- |
-| `ag:layout` | `auto`, `gallery`, `float`, `center` | 覆盖自动布局 |
-| `ag:side` | `left`, `right`, `center`/`centre` | 指定方向；center 不浮动 |
-| `ag:width` | `10%`-`100%` | 指定图片或浮动单元宽度；`100%` 等于满栏居中 |
-| `ag:gap` | `0`-`80px` | 浮动图与正文的间距；不影响画廊格间距（那个值在设置页「画廊间距」） |
-| `ag:crop` | `W:H` | 裁剪画幅的比例 |
-| `ag:top` | `x1:x2:y`（0-100） | 裁剪框顶边：左右端点与纵向位置 |
-| `ag:exclude` | flag | 完全排除插件处理 |
-| `ag:isolate` | flag | 切断前后 gallery 判断 |
-| `ag:rows` | `3,2` | 手写 gallery 的行切分：从组内第一张开始每行几张，其余自动 |
-| `ag:group` | flag / 正整数 | 锁定整行绑定；单独写等价 `1`，相邻两行用不同 id 区分 |
+## 安装
 
-### 画廊
+要求 Obsidian 1.5 或更高版本；桌面端与移动端共用同一份插件。
 
-相邻的图片行（中间不插正文）会排成一行；图片行与说明文字写在同一个段落里时，插件会先把段落拆成逐图的块，再按行高与各图比例分配单元格，因此「说明：」后紧接的两张图仍会并排。阅读视图会把这些拆分出来的块登记给 Obsidian 的虚拟渲染器，所以滚动时不会因为块被当作未知内容移除而跳动。
-
-行切分与行绑定也会落进源码。`ag:rows=3,2` 写在组内第一张图上，描述开头几行各放几张：行数按顺序消耗，最后一段在组内末尾截断，剩下的图片继续自动打包 —— 所以 `ag:rows=2,3` 配六张图是「二、三、一（自动）」，`ag:rows=4,3,1` 配六张图是「四、二（截断）」，`ag:rows=2` 配六张图是「二、再自动排四张」。参数永远不丢图；它只由人写，手势不会自动注入，解除行绑定后整组回到自动路由。手写的切分故意跳过「最小高度」，也不受「最大并列」约束（那个上限只管自动打包）。`ag:group` 把连续图片锁成一行，行内 id 相同，相邻两行绑定必须用不同 id 区分；绑定行不参与自动打包的增减，长度超过「最大并列」时退回打包算法。`ag:group` 由链接按钮写入或清除，手写同样有效。
-
-连续图片之间最多允许两个完全空白的源代码行；第三个空行会结束当前 gallery。gallery 结束后的第一个现有空行会保留为可编辑的 `.cm-line` 并清除浮动，使后续正文从 gallery 下方开始。出现普通正文、标题或其他结构时图片组也会结束。caption 应写在图片参数中，普通正文不会被猜测成 caption。
-
-### 裁剪
-
-裁剪默认关闭。`ag:crop` 锁定画幅比例，`ag:top` 给出裁剪框顶边在图中的位置：`x1:x2:y` 都是 0-100 的归一化值，`x1`/`x2` 是顶边左右端点（相对图宽），`y` 是顶边高度（相对图高）。顶边决定横向范围与纵向位置，高度由比例推出，因此画面中的任意矩形区域都能被表达。
-
-```markdown
-![[图.png|说明|ag:crop=16:9]]                  <!-- 该比例的最大画幅，居中 -->
-![[图.png|说明|ag:crop=24:17|ag:top=0:50:0]]   <!-- 左上四分之一 -->
-![[图.png|说明|ag:crop=1:1|ag:top=40:80:20]]   <!-- 右侧偏上的方形区域 -->
-```
-
-手写参数越界时会被静默修正：`x1`/`x2`/`y` 超出 0-100 直接夹到边界，左右端点写反会自动交换。若在给定的顶边宽度与剩余高度下，`ag:crop` 的比例会让画框底边超出图片，比例会放宽到刚好放下的最大值，顶边位置与横向范围保持不变；例如 1:1 图片上的 `ag:crop=1:1|ag:top=0:100:50` 会按 2:1 渲染。
-
-裁剪比例参与栏宽路由：插件用比例（而不是原图比例）重新计算显示宽度与是否浮动，因此把一张宽图裁成方形后，它会自动收窄并重新决定是否绕排。渲染使用 `object-view-box`（旧内核退回 `object-fit` + `object-position`）与 `aspect-ratio`，不会给祖先节点添加 `overflow: hidden`；表格单元格内的裁剪同样生效。
-
-### 交互
-
-- **调宽**：拖动图片右下角的 Obsidian 原生角标改变宽度，高度按原比例（或裁剪画幅）跟随；抬手后写入 `ag:width`，一次拖拽对应一次撤销。双击角标清除 `ag:width`，回到自动宽度。
-- **画廊手柄**：悬停画廊行，图片之间出现竖向分隔条，图片底边出现横向拉条。左右拖分隔条改写相邻两格的 `ag:crop`，两格比例之和保持不变，所以整行高度与同排其他格都不受影响；上下拖横条按新行高重写整排每格的 `ag:crop`，上限是「画廊最大高度」。每格左右两侧的按钮把这张图与前/后一张交换位置，位于行首或行尾时还能把它向前/向后并入相邻行（直接改写源码行顺序）。右下角的链接按钮把整行锁定为 `ag:group`，再次点击解除，锁定后自动打包不会拆开或合并这一行。拖拽期间按指针实时预览，抬手一次写入、一次撤销；按 Esc 取消，几何回到拖动前。
-- **对齐**：图片空余一侧常驻箭头，垂直居中。已居左的图片只在右侧显示 `[>]`，点击回到居中；已居右的只在左侧显示 `[<]`，同样回到居中；居中的图片两侧各一个，点击分别变为居左或居右。切换会同时写入 `ag:side`、`ag:layout` 与当前宽度 `ag:width`，之后再改栏宽只影响这张图。
-- **浮动条件**：居左或居右、且实际栏宽占比不超过「浮动最大生效宽度」时，正文才会绕排。居中的图片无论多窄都不浮动；显式写了 `ag:layout=float` 或 `ag:side` 时保持浮动，宽度最多被夹到该阈值，只有仅写 `ag:width` 且超过阈值才改为居中。
-- **恢复**：图片操作区在「放大 / 编辑 / 剪裁」之后还有一个恢复按钮，清除该图片的宽度、对齐、裁剪与间距参数，回到自动路由。命令面板的「恢复文档默认图片样式」会重置当前文档的全部图片，执行前弹窗二次确认，且整次重置只占一步撤销。
-- **自由剪裁**：悬停图片，点击操作区中的裁剪图标打开弹窗。弹窗始终按原图尺寸适配，裁剪框限制在图片边界以内，并能拉到图片的四条边；滚轮可缩放画布（只影响编辑视图，不改变裁剪结果）。比例下拉会记住上次的选择：上次是自由比例就继续自由，选了预设就继续锁定该预设；「当前比例 W:H」只在未锁定预设时作为第二项出现。拉杆的普通拖拽只移动指针所指的那条边（角点同时移动两条相邻边），Shift 拖动按当前比例缩放，Alt 拖动以中心对称缩放；拖动图片平移取景。保存后写入 `ag:crop` 与 `ag:top`。点击空白、按 Esc 或取消都会关闭，存在未保存修改时会先弹出确认。
-
-### 布局模板与路由
-
-阅读视图按 frontmatter 路由把笔记交给布局模板处理：路由按列表顺序匹配 frontmatter 键和值，未匹配时回退 `auto`；图片注释中的布局参数优先于路由模板。布局模板按图片宽高比命中 `rules` 中的区间，决定图片的宽度、布局与浮动方向；设置页可编辑每个模板的名称与浮动方向，内置 `auto` 永远保留且不可重命名。
-
-模板可通过设置页导入或导出为 JavaScript profile 文件（也可直接用 JSON）。导出会调用系统保存窗口（不再强制写入 Vault）；配置只影响运行时排版，不修改笔记源码。
-
-**导入导出的范围与合并规则**：配置文件只包含布局模板（`profiles`）；PDF 与页码设置、页边距与纸张、Frontmatter 路由、画廊与间距等全局参数都不在其中。导入为覆盖式更新：同 id 的模板被替换，文件中未提到的模板保持不变，内置 `auto` 不会被覆盖；文件中任何一条模板无效时整份拒绝导入，不会写入部分配置。导入时可省略 `id`，插件使用文件名；`rules` 为空数组时使用 `auto`。
-
-### 画廊设置
-
-设置页的“画廊视图控制”可选择同时按并列数量和行高限制、只按并列数量限制，或只按行高限制；不参与控制的数值输入会禁用。画廊设置包括：
-
-- 最小高度 `0-200px`（默认 `100`）：多图行的最低高度；
-- 最大高度 `120-1200px`（默认 `600`）：多图行的最高高度，也是行底横条能拖到的上限；超过时整行等比缩小并居中，纵向永不裁切；
-- 孤儿图片最大高度 `0-1200px`（默认 `400`，`0` 关闭）：独占一行的图片整栏高度超过它时退出画廊、改为居中单图排版，实时预览与阅读视图同时生效；
-- 最大并列 `2-15`（默认 `5`）与图片间距 `0-80px`（默认 `12`）。
-
-画廊垂直间距沿用 Obsidian 原生段落 margin，所有 gallery 项会让出自身下 margin，避免跨包装层叠加。
-
-### 设置页
-
-设置页顶部是一条吸顶的分区目录：基础、画廊、栏宽、PDF、浮动截止、配置管理、路由。点击任意单元跳到对应分区，滚动时目录同步高亮当前分区；窗口变窄、目录换行时仍然可用。
-
-目录最后一个单元是搜索：点击展开查找行，再次点击收起。输入即在设置项的名称与描述中匹配（分区标题本身也是目标，所以搜「PDF」会落到该分区开头），命中的条目带描边高亮，跳转区显示「当前 / 总数」。`Enter` 或 `↓` 跳到下一个，`Shift+Enter` 或 `↑` 跳到上一个，首尾循环；右侧高亮的「搜索」按钮与回车等价。没有匹配时显示「无结果」，输入框与跳转框同时转为错误色。
-
-查找行的布局与动画：未输入时只显示输入框和「搜索」按钮，输入框一直延伸到按钮左侧并保留一个间距，按钮固定占目录最后一格的宽度、与上方单元右对齐；一旦有结果，跳转区从按钮左侧展开、输入框同步压缩，清空后按相反方向收回。整个过程搜索按钮的位置和宽度都不变。
-
-设置保存后会立即重排：实时预览与阅读视图都会丢弃旧布局重新计算，不需要滚动、重开笔记或重载插件。
-
-所有数值设置共用同一个输入框宽度：数字右对齐，单位（`px`、`mm`、`%`、`s`、幅）固定在框内右侧；下拉框以及「配置管理」「路由」表格里的输入框不在这条规则内。
-
-### PDF 导出
-
-使用「Export PDF (AutoGallery)」命令或文件右键菜单导出当前笔记。导出流程把正文渲染到主窗口中的一个临时 `.print` 容器，按最终打印参数反推可排版宽高，等待图片与字体就绪后再运行与阅读视图相同的排版和分页，最后通过 Obsidian 的打印通道生成 PDF。
-
-之所以不使用 Obsidian 原生导出：原生导出在隐藏弹窗中完成渲染，该文档在进入打印布局前视口为 0，所有基于 `getBoundingClientRect` 的分页判定都会退化，图片压缩与标题分页无法运行。插件仍保留原生导出拦截（设置项「在 Obsidian 原生 PDF 导出中生效」）作为兜底，但它只保证 CSS 级别的排版效果。
-
-导出窗口提供两种预览：「版式预览」直接按阅读视图排版连续显示，「分页预览」按真实打印参数分页展示，页码、页边距和标题分页的改动可以即时核对；设置页可配置默认预览模式。
-
-设置页与导出窗口可覆盖纸张、方向、页边距、缩放、标题与超时；选择“跟随 Obsidian”时读取原生导出设置。页边距直接决定可用内容宽度，支持跟随 Obsidian、预设（无 / 窄 / 适中 / 宽，与 Word 预设一致）和自定义毫米值；预设与自定义模式下可开启「奇偶页不同」的镜像边距（内侧 / 外侧分别设置，奇数页内侧在左，偶数页在右）。导出结果会做文件头校验。预览准备阶段失败会自动回退到原生导出；打印超时或产物无效时保留对话框，并提供「使用 Obsidian 原生导出」按钮，需手动确认。
-
-页码默认开启，可关闭，位置可选页眉或页尾，对齐可选居左 / 居中 / 居右。页码由 Chromium 的打印页眉页脚模板在真实打印时生成，显示“当前页 / 总页数”，字体跟随渲染视图，只在分页预览与导出结果中出现，不会写进笔记内容。
-
-一行画廊不会被拆开：整行要么留在本页，要么整行移到下一页；放不下时可整行同比例缩小、栏宽不变，缩到上限再整行换页。图片因页末空间不足换页时，插件计算目标图片（含图注）底边与上一页页底的差值，只把该图片缩到刚好贴底的最小比例，不牵动同页其他图片，也不额外插入分页。缩放上限由设置页控制；超过上限时保持原尺寸并留在下一页，不会留下“缩了一半”的状态。与图片同段的正文会被拆成独立块，因此图片贴底后正文自然从下一页开始。导出窗口内的标题分页改动只对当次导出生效，默认继承设置页的开关与等级。
-
-## 实现方案
-
-阅读视图通过 `registerMarkdownPostProcessor` 观察 Obsidian 已生成的 Markdown section，只修改现有块的样式和 caption，不搬移正文节点。每个 section 记录源文件路径，因此同一 tab 内切换文件时会清理旧布局。section 在清理和重排期间暂停 MutationObserver，避免递归渲染。
-
-阅读 section 由连接状态下的顶层 `.markdown-preview-section` 统一接管。文件切换、active leaf/tab、视图布局变化、设置保存和插件重新加载都会触发刷新；刷新会释放旧 section 的清理函数并重置交替浮动索引，避免新旧文件的图片节点、参数或方向序列互相继承。Markdown postprocessor 只负责安排刷新，不直接处理可能仍处于 detached 状态的段落。
-
-刷新会保存阅读视图的滚动锚点；如果刷新前位于内容底部，则在当前布局帧完成后按刷新后的文档高度一次性重新定位到底部，避免图片加载或布局重算把视图推回上方或产生轻微回弹。
-
-实时阅览通过 CodeMirror 6 的 `StateField`、`ViewPlugin` 和 line decorations 实现。图片行保持原生 `.cm-line`，普通文本行不接受图片宽度样式。单图复用阅读视图的比例路由、浮动阈值和 profile 对齐；超过浮动阈值时按计算宽度居中。gallery 依据文档行位置分组，允许 CodeMirror widget buffer 和空白行存在；只有组内全部图片加载完成才重新计算，加载期间保留上一帧布局，防止闪烁。布局样式只通过单一 decoration transaction 应用，并在几何变化后调用 `EditorView.requestMeasure()` 更新坐标映射；离开视口或文件切换时发送清除效果。插件只在 Obsidian Live Preview 模式接管编辑器；Source 模式恢复原生图片与源码布局。
-
-实时阅览的 caption widget 会清除图片 embed 和 widget buffer 的默认垂直占位，只保留“图片与说明间距”；caption 使用图片单元的实际宽度，gallery 中也不会把图片间距算进 caption 宽度。
-
-接管的图片行会隐藏 Obsidian 用于源码编辑的 `img.cm-widgetBuffer` inline 占位节点。该节点不参与图片尺寸计算，但保留 inline display 会产生额外空白；隐藏占位不会移除真实图片或影响源码编辑。
-
-实时阅览的图片编辑操作区（`.embed-actions`）以单个图片 embed 为定位上下文，固定在该图片栏宽的右边缘，不再相对整条编辑行定位；原生 `.image-wrapper` 会填满已计算的图片单元，避免 inline-flex 重新计算栏宽。表格内的图片没有 Obsidian 自带的操作区，插件会为可见的表格图片补一个同样的右上角操作区（剪裁 / 排除 / 恢复）；单元格进入编辑态时只显示源码行，图片预览不会覆盖正在编辑的引用行。
-
-实时阅览计算栏宽时优先读取当前渲染行及其 `.cm-content` 宽度，避免虚拟化编辑器的 `contentDOM.clientWidth=1` 将百分比宽度错误计算成亚像素值。
-
-gallery 行使用以下公式按原始宽高比分配宽度：
+1. 社区市场（上架后）：设置 → 第三方插件 → 关闭安全模式 → 浏览 → 搜索 **AutoGallery** → 安装并启用。
+2. 手动安装：从 [Releases](https://github.com/JH0531/obsidian-autogallery/releases) 下载 `main.js` 与 `manifest.json`，放入库的插件目录，重启 Obsidian。
 
 ```text
-rowHeight = (containerWidth - gap * (count - 1)) / sum(aspectRatios)
-imageWidth = rowHeight * aspectRatio
+<库>/.obsidian/plugins/obsidian-autogallery/
+  main.js
+  manifest.json
 ```
 
-设置页的查找行不复制目录的网格，而是把目录最后一格的实测宽度写进 `--ag-nav-cell`：搜索按钮以此为宽、右缘与目录对齐，空闲时输入框吃掉剩余宽度。跳转区宽度从 `0` 过渡到该格宽，输入框用 flex 收缩吸收差值，所以展开与收起都不会推动按钮；目录尺寸变化由 `ResizeObserver` 重新测量。
+安装只需要这两个文件，没有额外的 `styles.css`。装好后设置页会出现 AutoGallery 一栏；连续写两三行图片应变成一行画廊。
 
-单图栏宽的默认参数在 `src/config.json` 中维护：中心比例 `1.5`、左幂 `2.0`、右幂 `1.5`、输出范围 `[0.2, 1]`。设置页的“栏宽增益”和“中位比例”会覆盖这些默认值。
+[社区市场安装](https://www.autogallery.run.place/zh/guide/install#从社区市场安装) · [手动安装](https://www.autogallery.run.place/zh/guide/install#手动安装)
 
-## 开发与部署
+## 五分钟上手
 
-```powershell
+三行图片之间不留空行，就会排成一行等高画廊；空行会结束画廊。
+
+```markdown
+![[photo-01.jpg]]
+![[photo-02.jpg]]
+![[photo-03.jpg]]
+```
+
+两图并排时行高更高，细节更清楚：
+
+```markdown
+![[photo-04.jpg]]
+![[photo-05.jpg]]
+```
+
+三个最常用的操作：
+
+- 让某张图独占一行：用正文或标题隔开，或写 `ag:isolate`。
+- 指定每行张数：在组内第一张写 `ag:rows=2,2`。
+- 改单图宽度：在实时预览里拖右下角，松开后写入 `ag:width`。
+
+完整教程：[五分钟上手](https://www.autogallery.run.place/zh/guide/quick-start) · [三个常用操作](https://www.autogallery.run.place/zh/guide/quick-start#三个常用操作)
+
+## 五个核心概念
+
+1. **分组看源码，不看屏幕**：[分组规则](https://www.autogallery.run.place/zh/gallery/grouping#规则表)
+2. **两张以上连续图片一定是画廊**：[行切分](https://www.autogallery.run.place/zh/gallery/rows#五张-自动分成-3-2)
+3. **单图宽度由比例算出**：[宽度路由](https://www.autogallery.run.place/zh/single/width#四档比例)
+4. **声明越近，优先级越高**：图片参数 > 模板 > 全局设置；[参数语法](https://www.autogallery.run.place/zh/annotations/syntax#语法规则)
+5. **容器决定能力**：列表、表格、callout 的规则不同；[嵌套作用域](https://www.autogallery.run.place/zh/annotations/scopes#能力矩阵)
+
+完整解释：[五个核心概念](https://www.autogallery.run.place/zh/guide/concepts)
+
+## 能力地图
+
+按工作流分组；每组对应文档站的一个栏目。
+
+**画廊** — 连续图片自动成行；`ag:rows` 切分、`ag:group` 锁定；行高上限与孤儿图片；五类手柄。
+[分组](https://www.autogallery.run.place/zh/gallery/grouping#规则表) · [行切分](https://www.autogallery.run.place/zh/gallery/rows#五张-自动分成-3-2) · [行高与孤儿](https://www.autogallery.run.place/zh/gallery/height#行高上限) · [画廊手柄](https://www.autogallery.run.place/zh/gallery/handles#五类手柄)
+
+**单图** — 按比例自动取宽；左右浮动与文字绕排；拖角标改宽、箭头对齐、一键复位。
+[宽度路由](https://www.autogallery.run.place/zh/single/width#四档比例) · [浮动与绕排](https://www.autogallery.run.place/zh/single/float#文字绕排) · [拖宽、对齐与复位](https://www.autogallery.run.place/zh/single/resize#拖角标)
+
+**参数与裁剪** — 十个 `ag:` 参数；按比例裁剪任意局部；列表/表格/callout 的作用域；说明对话框与重置。
+[参数语法](https://www.autogallery.run.place/zh/annotations/syntax#十个参数) · [裁剪与取景](https://www.autogallery.run.place/zh/annotations/crop#裁剪对话框) · [嵌套作用域](https://www.autogallery.run.place/zh/annotations/scopes#能力矩阵) · [说明与重置](https://www.autogallery.run.place/zh/annotations/dialog#图片说明对话框)
+
+**模板与路由** — 用区间规则定义整套宽度节奏；导入/导出模板；按 frontmatter 切换。
+[布局模板](https://www.autogallery.run.place/zh/templates/profiles#规则模型) · [导入与导出](https://www.autogallery.run.place/zh/templates/import#覆盖式更新) · [Frontmatter 路由](https://www.autogallery.run.place/zh/templates/routing#一条路由的结构)
+
+**PDF 导出** — 按纸张重新排版；整页/分页预览；页边距、页码与分页优化。
+[导出对话框](https://www.autogallery.run.place/zh/export/dialog#两种预览) · [分页优化](https://www.autogallery.run.place/zh/export/pagination) · [失败与排查](https://www.autogallery.run.place/zh/export/troubleshooting#症状对照表)
+
+**参考** — 设置项默认值；命令与入口；兼容性；常见误解。
+[设置项总表](https://www.autogallery.run.place/zh/reference/settings#画廊) · [命令](https://www.autogallery.run.place/zh/reference/commands#四条命令) · [兼容性](https://www.autogallery.run.place/zh/reference/compatibility#版本与平台) · [容易误解的行为](https://www.autogallery.run.place/zh/reference/pitfalls)
+
+## 常用参数与手势
+
+参数写在图片说明里，用 `|` 分隔；不写就走自动路由。标准 Markdown 与 `![[...]]` 都支持。
+
+| 参数 | 常用值 | 作用 |
+| --- | --- | --- |
+| `ag:layout` | `auto` `gallery` `float` `center` | 覆盖自动布局 |
+| `ag:side` | `left` `right` `center` | 指定对齐与浮动方向 |
+| `ag:width` | `10%`–`100%` | 指定图片或浮动单元宽度 |
+| `ag:crop` + `ag:top` | `16:9` + `0:50:0` | 裁剪比例与顶边位置 |
+| `ag:rows` / `ag:group` | `3,2` / `7` | 手写行切分 / 锁定整行 |
+| `ag:isolate` / `ag:exclude` | 标记 | 切断分组 / 交还原生渲染 |
+
+```markdown
+![[cover.jpg|封面|ag:side=center|ag:width=61%]]
+![[chart.png|图表|ag:crop=16:9|ag:top=0:50:0]]
+![独立图片|ag:isolate](images/one.png)
+```
+
+十个参数的完整说明：[参数语法](https://www.autogallery.run.place/zh/annotations/syntax#十个参数)。
+
+**手势**（实时预览）
+
+- 拖右下角改宽度，双击复位 → [拖角标](https://www.autogallery.run.place/zh/single/resize#拖角标)
+- 拖分隔条改列宽，拖行底横条改行高 → [五类手柄](https://www.autogallery.run.place/zh/gallery/handles#五类手柄)
+- 两侧按钮交换/并入，链接按钮锁定整行 → [锁定整行](https://www.autogallery.run.place/zh/gallery/handles#锁定整行)
+- 图片空余侧的箭头切换对齐 → [对齐箭头](https://www.autogallery.run.place/zh/single/resize#对齐箭头)
+
+## PDF 导出
+
+命令面板执行 **Export PDF (AutoGallery)**，或在文件右键菜单导出。插件在主窗口按纸张尺寸渲染、测量并分页。
+
+- **两种预览**：版式预览看连续排版，分页预览看真实页边界；页边距、页码与标题分页可即时核对。
+- **可调项**：纸张、方向、边距预设与奇偶页镜像、缩放、页眉页脚页码。
+- **分页**：画廊行不拆页，单图可贴底压缩，标题可另起一页，末页孤行可回收。
+
+[导出对话框](https://www.autogallery.run.place/zh/export/dialog#两种预览) · [分页优化](https://www.autogallery.run.place/zh/export/pagination) · [失败与排查](https://www.autogallery.run.place/zh/export/troubleshooting#症状对照表)
+
+## 开发与贡献
+
+```bash
 npm install
 npm run build
 ```
 
-构建后把 `main.js` 与 `manifest.json` 复制到测试 Vault 的 `.obsidian/plugins/obsidian-autogallery/`，用 Obsidian CLI 重载插件并在真实笔记中验证渲染与导出。
+构建产物是根目录的 `main.js`；把它和 `manifest.json` 复制到测试库的 `.obsidian/plugins/obsidian-autogallery/`，重载插件即可。仓库没有测试脚本，静态检查用 `npm run build`、`git diff --check` 与 `npm run check:docs`。
 
-`npm run build` 生成根目录 `main.js`。将 `main.js` 和 `manifest.json` 复制到目标 Vault 的 `.obsidian/plugins/obsidian-autogallery/`，然后重新加载插件。仓库目前没有测试脚本（`npm test` 会报 `Missing script: "test"`），静态检查用 `npm run build` 和 `git diff --check`，运行时验证在真实 Vault 中完成。
-
-使用 Obsidian CLI 验证运行时：
-
-```powershell
-obsidian vault=test plugin:reload id=obsidian-autogallery
-obsidian vault=test dev:errors
-obsidian vault=test dev:dom selector='.ag-caption' total
-obsidian vault=test dev:dom selector='.cm-line.ag-cm-gallery-line' total
-```
-
-停用插件后，Obsidian 仍会按原生方式渲染图片链接；插件生成的运行时样式和 caption 会被清理。
+渲染管线与架构约束见 [CONTRIBUTING.md](CONTRIBUTING.md#architecture)；设计推导见 [`specifications/`](specifications/)。提交前请读[贡献指南](CONTRIBUTING.md)。
 
 ## 参考与致谢
 
-以下项目在思路上提供了参考与启发：
-
 - [Adjustable Media](https://github.com/Yi-luo-hua/obsidian-adjustable-media) — 布局块与媒体排版思路。
-- [Better Export PDF](https://github.com/l1xnan/obsidian-better-export-pdf) — PDF 导出预览、页眉页脚与页码模板。
+- [Better Export PDF](https://github.com/l1xnan/obsidian-better-export-pdf) — PDF 预览、页眉页脚与页码模板。
 
-## 赞赏
-**国内支持者**（微信赞赏）
+完整变更见 [Changelog](https://www.autogallery.run.place/zh/changelog)；文档全貌见 [文档地图](https://www.autogallery.run.place/zh/guide/map)。
+
+## 支持
+
+如果 AutoGallery 节省了你的时间，可以通过以下方式支持开发：
+
+- [Ko-fi](https://ko-fi.com/jh0531)
+- [个人赞助页（微信、支付宝、PayPal）](https://www.opensponsor.dpdns.org/)
+
 <details>
-<summary>点击展开微信赞赏码</summary>
-<img src="assets\mm_reward_qrcode.png" width="220" alt="微信赞赏码">
-<p><sub>赞赏纯属自愿，感谢你的支持！</sub></p>
+<summary>微信赞赏码</summary>
+<img src="assets/mm_reward_qrcode.png" width="220" alt="微信赞赏码">
 </details>
 
 ## 许可证
