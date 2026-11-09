@@ -11,6 +11,8 @@ on:
 permissions:
   contents: write
   actions: write
+  id-token: write
+  attestations: write
 
 concurrency:
   group: plugin-release
@@ -58,6 +60,13 @@ jobs:
           git tag "${VERSION}"
           git push origin HEAD:main
           git push origin "${VERSION}"
+
+      - name: Attest release assets
+        uses: actions/attest@v4
+        with:
+          subject-path: |
+            main.js
+            manifest.json
 
       - name: Publish release
         env:

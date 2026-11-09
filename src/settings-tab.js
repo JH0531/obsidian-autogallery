@@ -1,4 +1,4 @@
-import { Notice, PluginSettingTab, Setting, setIcon } from "obsidian";
+import { Notice, Platform, PluginSettingTab, Setting, setIcon } from "obsidian";
 import { t, setLang, FOLLOW } from "./i18n.js";
 import { DEFAULT_SETTINGS } from "./defaults.js";
 import { MARGIN_PRESET_OPTIONS, PDF_PAGE_SIZE_NAMES } from "./print-geometry.js";
@@ -16,7 +16,7 @@ const SETTINGS_SECTIONS = [
   { id: "ag-sec-float", icon: "wrap-text", labelKey: "浮动截止", hintKey: "浮动截止设置" },
   { id: "ag-sec-profiles", icon: "folder-cog", labelKey: "配置管理", hintKey: "配置管理" },
   { id: "ag-sec-routes", icon: "git-branch", labelKey: "路由", hintKey: "Frontmatter 路由" }
-];
+].filter((section) => !(Platform.isMobile && section.id === "ag-sec-pdf"));
 
 /** Breathing room between the sticky nav and a section heading it scrolled to. */
 const SECTION_GAP = 12;
@@ -560,6 +560,7 @@ export class AutoGallerySettingTab extends PluginSettingTab {
   }
 
   renderPdfSection(container) {
+    if (Platform.isMobile) return;
     const pdf = { ...DEFAULT_SETTINGS.pdfExport, ...(this.plugin.settings.pdfExport ?? {}) };
     const pagination = this.plugin.settings.pdfPagination ?? DEFAULT_SETTINGS.pdfPagination;
     const savePdf = async (patch) => {
