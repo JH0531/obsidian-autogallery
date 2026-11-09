@@ -5,7 +5,7 @@
 <p><a href="README.md">中文</a> · <a href="https://www.autogallery.run.place/en/">Documentation</a> · <a href="CONTRIBUTING-EN.md">Contributing</a></p>
 
 <p>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-GPL--3.0--or--later-blue?style=flat-square" alt="License"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/JH0531/obsidian-autogallery?style=flat-square&cb=20261110a" alt="License"></a>
   <a href="https://github.com/JH0531/obsidian-autogallery/releases"><img src="https://img.shields.io/github/v/release/JH0531/obsidian-autogallery?style=flat-square&cb=20261110" alt="Version"></a>
   <a href="https://github.com/JH0531/obsidian-autogallery/stargazers"><img src="https://img.shields.io/github/stars/JH0531/obsidian-autogallery?style=flat-square&cb=20261110" alt="Stars"></a>
   <a href="https://github.com/JH0531/obsidian-autogallery/graphs/contributors"><img src="https://img.shields.io/github/contributors/JH0531/obsidian-autogallery?style=flat-square&cb=20261110" alt="Contributors"></a>
