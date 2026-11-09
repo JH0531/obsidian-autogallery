@@ -1,0 +1,6 @@
+{
+  "reviewBlockRef": "T-005#R-001",
+  "taskId": "T-005",
+  "verdict": "passed",
+  "content": "README 中英同步修完：五类手柄、对齐写入宽度、浮动条件条件句、两条失败路径、画廊行三段式；两文件 PDF 小节均为 3 段，行数差 ≤2。"
+}

@@ -1,0 +1,6 @@
+{
+  "reviewBlockRef": "T-103#R-001",
+  "taskId": "T-103",
+  "verdict": "passed",
+  "content": "中文 26 页迁入 docs/zh/，根 index.md 只做语言选择；config.mts 改为 /zh/ 与 /en/ 双 locale，nav/sidebar 全前缀。中文 93 条、英文 3 条根绝对链接补前缀，/media 未动。docs:check 报告 84 处媒体引用存在、26 页 × 2 语言标题与图序一致、内部链接可解析；docs:build 通过。"
+}

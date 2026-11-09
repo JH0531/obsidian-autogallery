@@ -1,0 +1,6 @@
+{
+  "reviewBlockRef": "T-004#R-001",
+  "taskId": "T-004",
+  "verdict": "passed",
+  "content": "英文 26 页与中文逐节平行：index 3 节、install 6 节、quick-start 5 节，图序完全一致；/en 链接已补，库外声明改为条件句，demo vault 链接统一。check:docs 的 zh-en-parity 0 失败。"
+}

@@ -1,0 +1,24 @@
+{
+  "widthRatio": {
+    "rMin": 0.2,
+    "rMax": 5,
+    "center": 1.5,
+    "wMin": 0.2,
+    "wMid": 0.5,
+    "wMax": 1,
+    "qLeft": 2,
+    "qRight": 1.5,
+    "floatMax": 0.6
+  },
+  "gallery": {
+    "orphanMaxHeight": 400,
+    "minCellWidthRatio": 0.05,
+    "mergeMaxCrop": 0.5
+  },
+  "pdfPagination": {
+    "singleImageMaxShrink": 0.15,
+    "lineHeightMaxShrink": 0.1,
+    "geometryEpsilon": 1,
+    "maxPasses": 4
+  }
+}

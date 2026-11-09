@@ -1,0 +1,81 @@
+name: release plugin
+
+# main 每次更新：构建、同步 demo 插件副本、版本进位、打 tag，并发布
+# main.js 与 manifest.json。Release 只包含这两个资产，符合 Obsidian 规范。
+# 版本提交带 [skip release]，避免自触发。
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: plugin-release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    if: ${{ !contains(github.event.head_commit.message, '[skip release]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build
+      - run: node scripts/sync-demo-plugin.mjs
+      - run: npm run check:demo
+
+      - name: Bump version
+        id: version
+        run: |
+          set -euo pipefail
+          VERSION="$(node scripts/release-version.mjs --next)"
+          echo "value=${VERSION}" >> "$GITHUB_OUTPUT"
+          echo "Releasing ${VERSION}"
+
+      - run: npm run check:demo
+
+      - name: Commit version and tag
+        env:
+          VERSION: ${{ steps.version.outputs.value }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "chore(release): ${VERSION} [skip release]"
+          git tag "${VERSION}"
+          git push origin HEAD:main
+          git push origin "${VERSION}"
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERSION: ${{ steps.version.outputs.value }}
+        run: |
+          set -euo pipefail
+          if gh release view "${VERSION}" >/dev/null 2>&1; then
+            echo "release ${VERSION} already exists"
+            exit 0
+          fi
+          gh release create "${VERSION}" main.js manifest.json \
+            --title "AutoGallery ${VERSION}" \
+            --notes "Obsidian AutoGallery ${VERSION}. Assets: main.js, manifest.json."
+
+      - name: Refresh demo branches
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh workflow run demo-branch.yml --ref main || true
+          gh workflow run demo-en-branch.yml --ref main || true

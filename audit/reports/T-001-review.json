@@ -1,0 +1,6 @@
+{
+  "reviewBlockRef": "T-001#R-001",
+  "taskId": "T-001",
+  "verdict": "passed",
+  "content": "facts.json 的 40 个设置项均带 source，数值范围由哨兵调用 normalizeSettings 反推；claims.json 覆盖 86 个展示面与 47 条 figures 描述，每条带 surface:line；check.mjs 八项检查可重复执行，修复前捕获 21 条事实错误与 5 项中英结构失败，修复后为 0。三件套通过 package.json 的 check:docs 串联。"
+}

@@ -1,0 +1,6 @@
+{
+  "reviewBlockRef": "T-206#R-001",
+  "taskId": "T-206",
+  "verdict": "passed",
+  "content": "8 个功能页补齐图示，按语言引用对应素材；6 个 textOnly 页面有明确理由。docs:sync 47 文件 0 缺失，docs:check 124 处媒体、27 页中英一致，docs:build 通过。"
+}

@@ -1,0 +1,22 @@
+node_modules/
+
+# 忽略根目录下所有点目录；只放行 CI 工作流
+/.*/
+!.github/
+!.github/workflows/
+
+# 演示库的录制产物与会话状态只留在本地
+demo/media/
+demo/.cache/
+demo/.tools/
+demo/.obsidian/workspace.json
+demo/.obsidian/plugins/obsidian-autogallery/image-sizes.json
+
+# 摄取工具链：代码入库，机器相关的路径与中间产物不入库
+tools/capture/vault.local.json
+tools/capture/out/
+tools/capture/.cache/
+
+# PlanWeave 草稿由 tools/docs/plan-package.mjs 生成，导入后即可重建
+.planweave-draft/
+tools/docs/.cache/

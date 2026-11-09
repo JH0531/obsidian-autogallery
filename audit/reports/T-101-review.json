@@ -1,0 +1,6 @@
+{
+  "reviewBlockRef": "T-101#R-001",
+  "taskId": "T-101",
+  "verdict": "passed",
+  "content": "demo-en 与 demo 同构：23 篇 + README、assets、.obsidian、插件副本、BUILD.json。逐篇比对数字与 ag: 参数多重集一致，零残留中文；wikilink 全部指向 demo-en 内英文文件名，图片路径全部存在。npm run check:demo 同时报告两库通过。"
+}

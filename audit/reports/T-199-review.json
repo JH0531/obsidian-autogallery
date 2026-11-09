@@ -1,0 +1,6 @@
+{
+  "reviewBlockRef": "T-199#R-001",
+  "taskId": "T-199",
+  "verdict": "passed",
+  "content": "两个内部库均写入 safeMode=false，obsidian.json 已注册且 demo 为 open:true。CDP 检查确认 vault 为内部 demo、插件实例存在、enabled=true、4 条命令注册、无信任弹窗。检查不依赖人工点击，失败会直接暴露为 plugin=false。"
+}

@@ -1,0 +1,6 @@
+{
+  "reviewBlockRef": "T-203#R-001",
+  "taskId": "T-203",
+  "verdict": "passed",
+  "content": "四格静帧全部完成：zh/dark、zh/light、en/dark、en/light 各 41/41，包含 23 张内容静帧、7 张界面静帧与 11 支动效。英文内容使用 noteEn/fromEn 锚点，界面静帧通过独立设置窗口 target 采集。manifest 176/176。"
+}

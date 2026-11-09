@@ -1,0 +1,6 @@
+{
+  "reviewBlockRef": "T-201#R-001",
+  "taskId": "T-201",
+  "verdict": "passed",
+  "content": "coverage.md 覆盖 26 个中文页面、40 个设置项、10 个 ag 参数、4 条命令、47 条素材。设置按页面聚合，参数与命令逐条列出。零图页面全部有不配图理由（changelog/install/index/compatibility/troubleshooting/import），未解释缺口为 0。英文素材缺口单列，交由 T-203/T-204。"
+}

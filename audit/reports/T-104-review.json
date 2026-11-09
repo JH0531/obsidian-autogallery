@@ -1,0 +1,6 @@
+{
+  "reviewBlockRef": "T-104#R-001",
+  "taskId": "T-104",
+  "verdict": "passed",
+  "content": "四条命令全绿：check:demo（demo 23 + demo-en 23）、check:docs（0/8）、docs:check（84 媒体 + 26×2 平行）、docs:build；git status 显示 src/、plugin.js、main.js 未改动。audit/REPORT.md 已增补双语结构与下载入口。"
+}

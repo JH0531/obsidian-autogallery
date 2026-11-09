@@ -1,0 +1,56 @@
+name: demo vault branch
+
+# main 更新后把 demo/ 镜像到孤儿分支 demo-vault。每次重写为单条 commit。
+# 发布快照不携带 data.json / image-sizes.json / workspace.json，用户下载后
+# 插件以默认参数启动。
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: demo-vault
+  cancel-in-progress: true
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build
+      - run: node scripts/sync-demo-plugin.mjs
+      - run: npm run check:demo
+
+      - name: Mirror demo/ to demo-vault
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          rm -rf /tmp/vault && mkdir -p /tmp/vault
+          cp -a demo/. /tmp/vault/
+          rm -f /tmp/vault/.obsidian/plugins/obsidian-autogallery/data.json
+          rm -f /tmp/vault/.obsidian/plugins/obsidian-autogallery/image-sizes.json
+          rm -f /tmp/vault/.obsidian/workspace.json
+          rm -f /tmp/vault/.ag-args.json
+          rm -rf /tmp/vault/media /tmp/vault/.cache /tmp/vault/.tools
+
+          git checkout --orphan demo-vault
+          git rm -rf . >/dev/null
+          cp -a /tmp/vault/. .
+          git add -A
+          git commit -m "demo vault snapshot: ${GITHUB_SHA::7}"
+          git push --force origin HEAD:demo-vault

@@ -1,0 +1,6 @@
+{
+  "reviewBlockRef": "T-200#R-001",
+  "taskId": "T-200",
+  "verdict": "passed",
+  "content": "方案 2 通过：在 runImagePass 中对 residual ∈ [0,12) 的画廊行做一次性预压缩（deficit=20+residual，上限 30%），不再在已分页坐标里二分。实测 510px 两版都在第 1 页（不误缩），515/520/525px 关闭优化第 2 页、开启优化第 1 页。改动仅 src/pdf-pagination.js 26 行，无 trace 残留，check:docs 0/8，main.js 与两个演示库硬链接一致。"
+}

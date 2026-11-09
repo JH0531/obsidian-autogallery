@@ -1,0 +1,6 @@
+{
+  "reviewBlockRef": "T-003#R-001",
+  "taskId": "T-003",
+  "verdict": "passed",
+  "content": "中文 26 页的 P0 已全部改正：分页页重写为五条规则 + 执行顺序 + 设置表 + 它不做什么 + 自己复现；对话框五项、安装两文件、设置页原生拦截语义、pitfalls 幽灵引用均已修。check:docs 中文段 0 finding。"
+}

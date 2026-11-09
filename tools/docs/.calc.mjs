@@ -1,0 +1,1 @@
+export { calculateWidthRatio, calculateGalleryRows } from "F:/Originality Space/Codes/obsidian_autogallery/src/layout.js";

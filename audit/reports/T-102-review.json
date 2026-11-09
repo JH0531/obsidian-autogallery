@@ -1,0 +1,6 @@
+{
+  "reviewBlockRef": "T-102#R-001",
+  "taskId": "T-102",
+  "verdict": "passed",
+  "content": "demo-en-branch.yml 镜像 demo-en/ 到孤儿分支 demo-en-vault，paths 覆盖 demo-en/**、check-demo.mjs 与本工作流，concurrency 独立；demo-release.yml 先跑 check:demo，再分别打包 autogallery-demo-*.zip 与 autogallery-demo-en-*.zip，两个资产一起发布。命名不会互相覆盖。"
+}

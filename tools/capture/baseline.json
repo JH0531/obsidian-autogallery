@@ -1,0 +1,124 @@
+{
+  "galleryGap": 12,
+  "galleryMinHeight": 100,
+  "galleryMaxHeight": 600,
+  "galleryOrphanMaxHeight": 400,
+  "galleryMaxPerRow": 5,
+  "galleryControl": "both",
+  "captionGap": 6,
+  "textGap": 16,
+  "mobileBreakpoint": 600,
+  "maxImagesPerRow": 5,
+  "imageBottomGap": 0,
+  "resizeEnabled": true,
+  "alignButtonsEnabled": true,
+  "cropRatioPreset": "free",
+  "language": "zh",
+  "floatMax": 60,
+  "widthControl": {
+    "gain": 50,
+    "medianRatio": 1.5
+  },
+  "floatBreaks": {
+    "heading": true,
+    "code": true,
+    "math": true,
+    "image": true,
+    "table": true,
+    "quote": true
+  },
+  "profiles": [
+    {
+      "id": "auto",
+      "name": "auto",
+      "floatAlignment": "alternate",
+      "rules": "auto"
+    },
+    {
+      "id": "wide",
+      "name": "wide",
+      "floatAlignment": "alternate",
+      "rules": [
+        {
+          "ratioRange": "[0.75,1.35]",
+          "width": 0.68,
+          "layout": "auto",
+          "side": "auto"
+        },
+        {
+          "ratioRange": "(1.35,5]",
+          "width": "0.55 + 0.1 * Math.log(r)",
+          "layout": "auto",
+          "side": "auto"
+        },
+        {
+          "ratioRange": "[0.2,0.75)",
+          "width": "Math.max(0.32, 0.3 + 0.2 * r)",
+          "layout": "float",
+          "floatAlignment": "left",
+          "side": "auto"
+        }
+      ]
+    },
+    {
+      "id": "tight",
+      "name": "tight",
+      "floatAlignment": "right",
+      "rules": [
+        {
+          "ratioRange": "(0.2,5]",
+          "width": 0.4,
+          "layout": "float",
+          "floatAlignment": "right",
+          "side": "auto"
+        }
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "id": "route-1",
+      "key": "album",
+      "value": "trip",
+      "profile": "wide",
+      "enabled": true
+    }
+  ],
+  "externalProfilePath": "",
+  "pdfExportEnabled": true,
+  "pdfExport": {
+    "pageSize": "A4",
+    "orientation": "portrait",
+    "marginMode": "preset",
+    "marginPreset": "narrow",
+    "mirrorMargins": false,
+    "innerMarginMm": 20,
+    "outerMarginMm": 12,
+    "marginMm": {
+      "top": 12,
+      "right": 12,
+      "bottom": 12,
+      "left": 12
+    },
+    "scalePercent": 100,
+    "includeTitle": false,
+    "openAfterExport": false,
+    "previewMode": "layout",
+    "pageNumber": {
+      "enabled": true,
+      "band": "footer",
+      "align": "center"
+    },
+    "timeoutMs": 60000
+  },
+  "pdfPagination": {
+    "headingBreakEnabled": false,
+    "headingBreakLevel": 1,
+    "imageOptimizationEnabled": true,
+    "imageShrinkPriority": "image",
+    "singleImageMaxShrink": 0.15,
+    "lineHeightMaxShrink": 0.1,
+    "orphanControlEnabled": true,
+    "orphanMaxLines": 2
+  }
+}

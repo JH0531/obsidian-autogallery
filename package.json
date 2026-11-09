@@ -1,0 +1,21 @@
+{
+  "name": "obsidian-autogallery",
+  "version": "1.0.0",
+  "private": true,
+  "license": "GPL-3.0-or-later",
+  "description": "Automatic image layout for Obsidian notes",
+  "scripts": {
+    "build": "node esbuild.config.mjs production",
+    "dev": "node esbuild.config.mjs",
+    "sync:demo": "node scripts/sync-demo-plugin.mjs",
+    "release:version": "node scripts/release-version.mjs --next",
+    "check:demo": "node scripts/check-demo.mjs",
+    "check:docs": "node tools/docs/facts.mjs && node tools/docs/claims.mjs && node tools/docs/check.mjs"
+  },
+  "devDependencies": {
+    "@codemirror/state": "^6.5.0",
+    "@codemirror/view": "^6.38.6",
+    "esbuild": "^0.25.0",
+    "obsidian": "^1.13.1"
+  }
+}

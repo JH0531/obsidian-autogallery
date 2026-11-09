@@ -1,0 +1,6 @@
+{
+  "reviewBlockRef": "T-205#R-001",
+  "taskId": "T-205",
+  "verdict": "passed",
+  "content": "静帧 WebP、动效 MP4，命名与路径符合规范；manifest 176/176，四格 41/41；manifest-check 通过，matrix 无缺口；文档媒体引用 96 处全部存在。"
+}

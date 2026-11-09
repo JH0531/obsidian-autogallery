@@ -1,0 +1,865 @@
+{
+  "version": 1,
+  "generatedAt": "2026-11-09T17:49:18.722Z",
+  "plugin": {
+    "id": "obsidian-autogallery",
+    "version": "0.1.0",
+    "minAppVersion": "1.5.0",
+    "commit": "a2876c8",
+    "testScript": false
+  },
+  "settings": [
+    {
+      "key": "language",
+      "labels": {
+        "zh": "语言",
+        "en": "Language"
+      },
+      "default": "follow",
+      "display": "follow",
+      "unit": "enum",
+      "source": "src/defaults.js:28",
+      "values": [
+        "follow",
+        "zh",
+        "en"
+      ]
+    },
+    {
+      "key": "captionGap",
+      "labels": {
+        "zh": "图片与说明间距",
+        "en": "Image-to-caption gap"
+      },
+      "default": 6,
+      "display": "6",
+      "unit": "px",
+      "source": "src/defaults.js:20",
+      "range": {
+        "min": 0,
+        "max": 48
+      },
+      "rangeDisplay": "0–48"
+    },
+    {
+      "key": "imageBottomGap",
+      "labels": {
+        "zh": "图片下边距",
+        "en": "Image bottom margin"
+      },
+      "default": 0,
+      "display": "0",
+      "unit": "px",
+      "source": "src/defaults.js:24",
+      "range": {
+        "min": 0,
+        "max": 80
+      },
+      "rangeDisplay": "0–80"
+    },
+    {
+      "key": "textGap",
+      "labels": {
+        "zh": "正文与图片间距",
+        "en": "Text-to-image gap"
+      },
+      "default": 16,
+      "display": "16",
+      "unit": "px",
+      "source": "src/defaults.js:21",
+      "range": {
+        "min": 0,
+        "max": 80
+      },
+      "rangeDisplay": "0–80"
+    },
+    {
+      "key": "mobileBreakpoint",
+      "labels": {
+        "zh": "移动布局断点",
+        "en": "Mobile layout breakpoint"
+      },
+      "default": 600,
+      "display": "600",
+      "unit": "px",
+      "source": "src/defaults.js:22",
+      "range": {
+        "min": 320,
+        "max": 1200
+      },
+      "rangeDisplay": "320–1200"
+    },
+    {
+      "key": "galleryControl",
+      "labels": {
+        "zh": "画廊视图控制",
+        "en": "Gallery layout control"
+      },
+      "default": "both",
+      "display": "both",
+      "unit": "enum",
+      "source": "src/defaults.js:19",
+      "values": [
+        "both",
+        "count",
+        "height"
+      ]
+    },
+    {
+      "key": "galleryMinHeight",
+      "labels": {
+        "zh": "画廊最小高度",
+        "en": "Gallery min height"
+      },
+      "default": 100,
+      "display": "100",
+      "unit": "px",
+      "source": "src/defaults.js:10",
+      "range": {
+        "min": 0,
+        "max": 200
+      },
+      "rangeDisplay": "0–200"
+    },
+    {
+      "key": "galleryMaxHeight",
+      "labels": {
+        "zh": "画廊最大高度",
+        "en": "Gallery max height"
+      },
+      "default": 600,
+      "display": "600",
+      "unit": "px",
+      "source": "src/defaults.js:14",
+      "range": {
+        "min": 120,
+        "max": 1200
+      },
+      "rangeDisplay": "120–1200"
+    },
+    {
+      "key": "galleryOrphanMaxHeight",
+      "labels": {
+        "zh": "孤儿图片最大高度",
+        "en": "Orphan image max height"
+      },
+      "default": 400,
+      "display": "400",
+      "unit": "px",
+      "source": "src/defaults.js:17",
+      "range": {
+        "min": 0,
+        "max": 1200
+      },
+      "rangeDisplay": "0–1200"
+    },
+    {
+      "key": "galleryMaxPerRow",
+      "labels": {
+        "zh": "画廊最大并列",
+        "en": "Gallery max per row"
+      },
+      "default": 5,
+      "display": "5",
+      "unit": "count",
+      "source": "src/defaults.js:18",
+      "range": {
+        "min": 2,
+        "max": 15
+      },
+      "rangeDisplay": "2–15"
+    },
+    {
+      "key": "galleryGap",
+      "labels": {
+        "zh": "画廊图片间距",
+        "en": "Gallery image gap"
+      },
+      "default": 12,
+      "display": "12",
+      "unit": "px",
+      "source": "src/defaults.js:9",
+      "range": {
+        "min": 0,
+        "max": 80
+      },
+      "rangeDisplay": "0–80"
+    },
+    {
+      "key": "widthControl.gain",
+      "labels": {
+        "zh": "栏宽增益",
+        "en": "Width gain"
+      },
+      "default": 50,
+      "display": "50",
+      "unit": "count",
+      "source": "src/defaults.js:38",
+      "range": {
+        "min": 0,
+        "max": 100
+      },
+      "rangeDisplay": "0–100"
+    },
+    {
+      "key": "widthControl.medianRatio",
+      "labels": {
+        "zh": "中位比例",
+        "en": "Median ratio"
+      },
+      "default": 1.5,
+      "display": "1.5",
+      "unit": "number",
+      "source": "src/defaults.js:38",
+      "range": {
+        "min": 0.2,
+        "max": 5
+      },
+      "rangeDisplay": "0.2–5"
+    },
+    {
+      "key": "floatMax",
+      "labels": {
+        "zh": "浮动最大生效宽度",
+        "en": "Float max effective width"
+      },
+      "default": 60,
+      "display": "60%",
+      "unit": "percent",
+      "source": "src/defaults.js:29",
+      "range": {
+        "min": 0,
+        "max": 100
+      },
+      "rangeDisplay": "0%–100%"
+    },
+    {
+      "key": "resizeEnabled",
+      "labels": {
+        "zh": "实时预览拖拽调宽",
+        "en": "Drag-to-resize in Live Preview"
+      },
+      "default": true,
+      "display": "true",
+      "unit": "bool",
+      "source": "src/defaults.js:25",
+      "values": [
+        true,
+        false
+      ]
+    },
+    {
+      "key": "alignButtonsEnabled",
+      "labels": {
+        "zh": "显示对齐箭头",
+        "en": "Show alignment arrows"
+      },
+      "default": true,
+      "display": "true",
+      "unit": "bool",
+      "source": "src/defaults.js:26",
+      "values": [
+        true,
+        false
+      ]
+    },
+    {
+      "key": "floatSpaceMode",
+      "labels": {
+        "zh": "浮动空间策略",
+        "en": "Float space"
+      },
+      "default": "ordered",
+      "display": "ordered",
+      "unit": "enum",
+      "source": "src/defaults.js:37",
+      "values": [
+        "ordered",
+        "share"
+      ]
+    },
+    {
+      "key": "pdfExport.pageSize",
+      "labels": {
+        "zh": "纸张",
+        "en": "Paper size"
+      },
+      "default": "inherit",
+      "display": "inherit",
+      "unit": "enum",
+      "source": "src/defaults.js:45",
+      "values": [
+        "inherit",
+        "A3",
+        "A4",
+        "A5",
+        "Legal",
+        "Letter",
+        "Tabloid"
+      ]
+    },
+    {
+      "key": "pdfExport.orientation",
+      "labels": {
+        "zh": "方向",
+        "en": "Orientation"
+      },
+      "default": "inherit",
+      "display": "inherit",
+      "unit": "enum",
+      "source": "src/defaults.js:46",
+      "values": [
+        "inherit",
+        "portrait",
+        "landscape"
+      ]
+    },
+    {
+      "key": "pdfExport.marginMode",
+      "labels": {
+        "zh": "页边距",
+        "en": "Margins"
+      },
+      "default": "inherit",
+      "display": "inherit",
+      "unit": "enum",
+      "source": "src/defaults.js:47",
+      "values": [
+        "inherit",
+        "preset",
+        "custom"
+      ]
+    },
+    {
+      "key": "pdfExport.marginPreset",
+      "labels": {
+        "zh": "边距预设",
+        "en": "Margin preset"
+      },
+      "default": "narrow",
+      "display": "narrow",
+      "unit": "enum",
+      "source": "src/defaults.js:48",
+      "values": [
+        "none",
+        "narrow",
+        "moderate",
+        "wide",
+        "none",
+        "narrow",
+        "moderate",
+        "wide"
+      ]
+    },
+    {
+      "key": "pdfExport.mirrorMargins",
+      "labels": {
+        "zh": "奇偶页不同",
+        "en": "Different odd/even pages"
+      },
+      "default": false,
+      "display": "false",
+      "unit": "bool",
+      "source": "src/defaults.js:49",
+      "values": [
+        true,
+        false
+      ]
+    },
+    {
+      "key": "pdfExport.innerMarginMm",
+      "labels": {
+        "zh": "内侧",
+        "en": "Inner"
+      },
+      "default": 20,
+      "display": "20",
+      "unit": "mm",
+      "source": "src/defaults.js:50",
+      "range": {
+        "min": 0,
+        "max": 60
+      },
+      "rangeDisplay": "0–60"
+    },
+    {
+      "key": "pdfExport.outerMarginMm",
+      "labels": {
+        "zh": "外侧",
+        "en": "Outer"
+      },
+      "default": 12,
+      "display": "12",
+      "unit": "mm",
+      "source": "src/defaults.js:51",
+      "range": {
+        "min": 0,
+        "max": 80
+      },
+      "rangeDisplay": "0–80"
+    },
+    {
+      "key": "pdfExport.scalePercent",
+      "labels": {
+        "zh": "缩放",
+        "en": "Scale"
+      },
+      "default": "inherit",
+      "display": "inherit",
+      "unit": "enum",
+      "source": "src/defaults.js:53",
+      "values": [
+        "inherit",
+        "10-200%"
+      ]
+    },
+    {
+      "key": "pdfExport.includeTitle",
+      "labels": {
+        "zh": "包含笔记标题",
+        "en": "Include note title"
+      },
+      "default": false,
+      "display": "false",
+      "unit": "bool",
+      "source": "src/defaults.js:54",
+      "values": [
+        true,
+        false
+      ]
+    },
+    {
+      "key": "pdfExport.pageNumber.enabled",
+      "labels": {
+        "zh": "页码",
+        "en": "Page numbers"
+      },
+      "default": true,
+      "display": "true",
+      "unit": "bool",
+      "source": "src/defaults.js:57",
+      "values": [
+        true,
+        false
+      ]
+    },
+    {
+      "key": "pdfExport.pageNumber.band",
+      "labels": {
+        "zh": "页码位置",
+        "en": "Page number position"
+      },
+      "default": "footer",
+      "display": "footer",
+      "unit": "enum",
+      "source": "src/defaults.js:57",
+      "values": [
+        "header",
+        "footer"
+      ]
+    },
+    {
+      "key": "pdfExport.pageNumber.align",
+      "labels": {
+        "zh": "页码对齐",
+        "en": "Page number align"
+      },
+      "default": "center",
+      "display": "center",
+      "unit": "enum",
+      "source": "src/defaults.js:57",
+      "values": [
+        "left",
+        "center",
+        "right"
+      ]
+    },
+    {
+      "key": "pdfExport.previewMode",
+      "labels": {
+        "zh": "打印窗口默认视图",
+        "en": "Default print window view"
+      },
+      "default": "layout",
+      "display": "layout",
+      "unit": "enum",
+      "source": "src/defaults.js:56",
+      "values": [
+        "layout",
+        "pages"
+      ]
+    },
+    {
+      "key": "pdfExport.timeoutMs",
+      "labels": {
+        "zh": "导出超时",
+        "en": "Export timeout"
+      },
+      "default": 60000,
+      "display": "60s",
+      "unit": "ms",
+      "source": "src/defaults.js:58",
+      "range": {
+        "min": 5000,
+        "max": 180000
+      },
+      "rangeDisplay": "5s–180s"
+    },
+    {
+      "key": "pdfExportEnabled",
+      "labels": {
+        "zh": "在 Obsidian 原生 PDF 导出中生效",
+        "en": "Applies in Obsidian native PDF export"
+      },
+      "default": true,
+      "display": "true",
+      "unit": "bool",
+      "source": "src/defaults.js:43",
+      "values": [
+        true,
+        false
+      ]
+    },
+    {
+      "key": "pdfPagination.headingBreakEnabled",
+      "labels": {
+        "zh": "默认标题分页导出设置",
+        "en": "Default heading-pagination export settings"
+      },
+      "default": false,
+      "display": "false",
+      "unit": "bool",
+      "source": "src/defaults.js:61",
+      "values": [
+        true,
+        false
+      ]
+    },
+    {
+      "key": "pdfPagination.headingBreakLevel",
+      "labels": {
+        "zh": "标题分页起始等级",
+        "en": "Heading pagination start level"
+      },
+      "default": 1,
+      "display": "1",
+      "unit": "count",
+      "source": "src/defaults.js:62",
+      "range": {
+        "min": 1,
+        "max": 6
+      },
+      "rangeDisplay": "1–6"
+    },
+    {
+      "key": "pdfPagination.imageOptimizationEnabled",
+      "labels": {
+        "zh": "图片分页优化",
+        "en": "Image pagination optimization"
+      },
+      "default": true,
+      "display": "true",
+      "unit": "bool",
+      "source": "src/defaults.js:63",
+      "values": [
+        true,
+        false
+      ]
+    },
+    {
+      "key": "pdfPagination.imageShrinkPriority",
+      "labels": {
+        "zh": "图片分页优化优先使用裕度",
+        "en": "Image pagination priority margin"
+      },
+      "default": "image",
+      "display": "image",
+      "unit": "enum",
+      "source": "src/defaults.js:64",
+      "values": [
+        "image",
+        "line"
+      ]
+    },
+    {
+      "key": "pdfPagination.singleImageMaxShrink",
+      "labels": {
+        "zh": "图片最大压缩高度",
+        "en": "Max image shrink"
+      },
+      "default": 0.15,
+      "display": "15%",
+      "unit": "ratio",
+      "source": "src/defaults.js:65",
+      "range": {
+        "min": 0,
+        "max": 0.5
+      },
+      "rangeDisplay": "0%–50%"
+    },
+    {
+      "key": "pdfPagination.lineHeightMaxShrink",
+      "labels": {
+        "zh": "行距最大压缩高度",
+        "en": "Max line-height shrink"
+      },
+      "default": 0.1,
+      "display": "10%",
+      "unit": "ratio",
+      "source": "src/defaults.js:66",
+      "range": {
+        "min": 0,
+        "max": 0.2
+      },
+      "rangeDisplay": "0%–20%"
+    },
+    {
+      "key": "pdfPagination.orphanControlEnabled",
+      "labels": {
+        "zh": "孤行控制",
+        "en": "Orphan control"
+      },
+      "default": true,
+      "display": "true",
+      "unit": "bool",
+      "source": "src/defaults.js:67",
+      "values": [
+        true,
+        false
+      ]
+    },
+    {
+      "key": "pdfPagination.orphanMaxLines",
+      "labels": {
+        "zh": "末页允许行数",
+        "en": "Trailing page allowed lines"
+      },
+      "default": 2,
+      "display": "2",
+      "unit": "count",
+      "source": "src/defaults.js:68",
+      "range": {
+        "min": 1,
+        "max": 5
+      },
+      "rangeDisplay": "1–5"
+    }
+  ],
+  "params": [
+    {
+      "name": "layout",
+      "syntax": "auto | gallery | float | center",
+      "source": "src/annotations.js:65-68",
+      "values": [
+        "auto",
+        "gallery",
+        "float",
+        "center"
+      ],
+      "present": true
+    },
+    {
+      "name": "side",
+      "syntax": "left | right | center | centre",
+      "source": "src/annotations.js:69-72",
+      "values": [
+        "left",
+        "right",
+        "center",
+        "centre"
+      ],
+      "present": true
+    },
+    {
+      "name": "width",
+      "syntax": "10%–100%（必须带 %）",
+      "source": "src/annotations.js:327-335",
+      "range": {
+        "min": 10,
+        "max": 100,
+        "unit": "%"
+      },
+      "present": true
+    },
+    {
+      "name": "gap",
+      "syntax": "0–80（可省略 px）",
+      "source": "src/annotations.js:337-342",
+      "range": {
+        "min": 0,
+        "max": 80,
+        "unit": "px"
+      },
+      "present": true
+    },
+    {
+      "name": "crop",
+      "syntax": "W:H，W/H 各自 1–50，比例 0.1–10",
+      "source": "src/annotations.js:346-354",
+      "range": {
+        "min": 0.1,
+        "max": 10,
+        "unit": "ratio"
+      },
+      "present": true
+    },
+    {
+      "name": "top",
+      "syntax": "x1:x2:y，三段，各 0–100；必须与 crop 同时存在",
+      "source": "src/annotations.js:385-394",
+      "present": true
+    },
+    {
+      "name": "rows",
+      "syntax": "逗号分隔，每项 1–15，最多 30 项",
+      "source": "src/annotations.js:366-377",
+      "range": {
+        "min": 1,
+        "max": 15,
+        "unit": "count"
+      },
+      "present": true
+    },
+    {
+      "name": "group",
+      "syntax": "正整数；裸标记等于 1；false 取消",
+      "source": "src/annotations.js:55-63",
+      "present": true
+    },
+    {
+      "name": "isolate",
+      "syntax": "标记，或 =false",
+      "source": "src/annotations.js:53-54",
+      "values": [
+        true,
+        false
+      ],
+      "present": true
+    },
+    {
+      "name": "exclude",
+      "syntax": "标记，或 =false",
+      "source": "src/annotations.js:53-54",
+      "values": [
+        true,
+        false
+      ],
+      "present": true
+    }
+  ],
+  "retiredParams": [
+    "fit",
+    "focus",
+    "top"
+  ],
+  "commands": {
+    "registered": [
+      {
+        "id": "set-image-annotation",
+        "labelZh": "设置图片说明与布局",
+        "source": "plugin.js"
+      },
+      {
+        "id": "clear-image-annotation",
+        "labelZh": "清除图片说明与布局",
+        "source": "plugin.js"
+      },
+      {
+        "id": "reset-document-image-layout",
+        "labelZh": "恢复文档默认图片样式",
+        "source": "plugin.js"
+      },
+      {
+        "id": "export-pdf",
+        "labelZh": "导出 PDF (AutoGallery)",
+        "source": "plugin.js"
+      }
+    ],
+    "ids": [
+      "set-image-annotation",
+      "clear-image-annotation",
+      "reset-document-image-layout",
+      "export-pdf"
+    ]
+  },
+  "pdf": {
+    "pageNumbersBandMm": 11,
+    "defaultTimeoutMs": 60000,
+    "headingBreakDefault": false,
+    "headingBreakLevelDefault": 1,
+    "imageShrinkDefault": 0.15,
+    "lineShrinkDefault": 0.1,
+    "orphanDefault": true,
+    "orphanMaxLinesDefault": 2
+  },
+  "figures": {
+    "total": 47,
+    "byKind": {
+      "content": 30,
+      "ui": 11,
+      "pdf": 6
+    },
+    "ids": [
+      "AG-S02-01",
+      "AG-S04-01",
+      "AG-S04-02",
+      "AG-S04-03",
+      "AG-S05-01",
+      "AG-S05-02",
+      "AG-S05-03",
+      "AG-S05-04",
+      "AG-S06-01",
+      "AG-S06-02",
+      "AG-A07-01",
+      "AG-A07-02",
+      "AG-V07-01",
+      "AG-S08-01a",
+      "AG-S08-01b",
+      "AG-S09-01",
+      "AG-A10-01",
+      "AG-V10-01",
+      "AG-S11-01",
+      "AG-S11-02",
+      "AG-S11-03",
+      "AG-S12-01",
+      "AG-S12-02",
+      "AG-S12-03",
+      "AG-S12-04",
+      "AG-A13-01",
+      "AG-S13-01",
+      "AG-S13-02",
+      "AG-S14-01",
+      "AG-S15-01",
+      "AG-S17-01",
+      "AG-S17-02",
+      "AG-S18-01",
+      "AG-V18-01",
+      "AG-S19-01",
+      "AG-S19-02",
+      "AG-S19-03",
+      "AG-S19-05",
+      "AG-S19-04",
+      "AG-V19-01",
+      "AG-S20-01",
+      "AG-A20-02",
+      "AG-A20-01",
+      "AG-S22-01",
+      "AG-S22-02",
+      "AG-V00-01",
+      "AG-A02-01"
+    ],
+    "posters": [
+      "AG-P00-01",
+      "AG-P01-01"
+    ],
+    "retired": 9,
+    "textOnly": 3
+  },
+  "docs": {
+    "pagesZh": 27,
+    "pagesEn": 27
+  },
+  "warnings": {
+    "missingLabels": []
+  }
+}

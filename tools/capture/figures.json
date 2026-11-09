@@ -1,0 +1,674 @@
+{
+  "version": 4,
+  "matrix": {
+    "lang": [
+      "zh",
+      "en"
+    ],
+    "theme": [
+      "dark",
+      "light"
+    ]
+  },
+  "note": "编号 = AG-<S|A|V><页序号>-<序号>[a|b]；页序号对应文档站 26 页。from 为空表示从文档顶部开始，to 为空表示到本节最后一个块。语言与主题不进编号，由 media/<lang>/<theme>/ 目录区分。",
+  "items": [
+    {
+      "id": "AG-S02-01",
+      "media": "still",
+      "page": "guide/quick-start",
+      "note": "01-五分钟上手.md",
+      "from": null,
+      "to": "再放两张",
+      "desc": "首屏：段落内三张图被接成一行",
+      "noteEn": "01-quick-start.md"
+    },
+    {
+      "id": "AG-S04-01",
+      "media": "still",
+      "page": "gallery/grouping",
+      "note": "03-分组规则.md",
+      "from": "零空行",
+      "to": null,
+      "desc": "零空行：连续图片归入同一画廊",
+      "noteEn": "03-grouping.md",
+      "fromEn": "Zero blank lines"
+    },
+    {
+      "id": "AG-S04-02",
+      "media": "still",
+      "page": "gallery/grouping",
+      "note": "03-分组规则.md",
+      "from": "正文断组",
+      "to": null,
+      "desc": "正文断组：文字把画廊切成两段",
+      "noteEn": "03-grouping.md",
+      "fromEn": "Broken by body text"
+    },
+    {
+      "id": "AG-S04-03",
+      "media": "still",
+      "page": "gallery/grouping",
+      "note": "03-分组规则.md",
+      "from": "三个空行",
+      "to": null,
+      "desc": "三个空行：空行数不改变分组边界",
+      "noteEn": "03-grouping.md",
+      "fromEn": "Three blank lines"
+    },
+    {
+      "id": "AG-S05-01",
+      "media": "still",
+      "page": "gallery/rows",
+      "note": "04-行切分与混合比例.md",
+      "from": "两张横图",
+      "to": null,
+      "desc": "两张横图：一行两格",
+      "noteEn": "04-row-splitting.md",
+      "fromEn": "Two landscape images"
+    },
+    {
+      "id": "AG-S05-02",
+      "media": "still",
+      "page": "gallery/rows",
+      "note": "04-行切分与混合比例.md",
+      "from": "五张",
+      "to": null,
+      "desc": "五张：自动切成两行",
+      "noteEn": "04-row-splitting.md",
+      "fromEn": "Five images"
+    },
+    {
+      "id": "AG-S05-03",
+      "media": "still",
+      "page": "gallery/rows",
+      "note": "04-行切分与混合比例.md",
+      "from": "七张",
+      "to": null,
+      "desc": "七张：多行打包与末行余量",
+      "noteEn": "04-row-splitting.md",
+      "fromEn": "Seven images"
+    },
+    {
+      "id": "AG-S05-04",
+      "media": "still",
+      "page": "gallery/rows",
+      "note": "04-行切分与混合比例.md",
+      "from": "混合宽高比",
+      "to": null,
+      "desc": "混合宽高比：按高度对齐的紧凑排布",
+      "noteEn": "04-row-splitting.md",
+      "fromEn": "Mixed ratios"
+    },
+    {
+      "id": "AG-S06-01",
+      "media": "still",
+      "page": "gallery/height",
+      "note": "05-行高上限与孤儿.md",
+      "from": "行高上限",
+      "to": null,
+      "desc": "行高上限：超过上限的行被压缩",
+      "noteEn": "05-row-height-and-orphans.md",
+      "fromEn": "Row height cap"
+    },
+    {
+      "id": "AG-S06-02",
+      "media": "still",
+      "page": "gallery/height",
+      "note": "05-行高上限与孤儿.md",
+      "from": "孤儿图片",
+      "to": null,
+      "desc": "孤儿图片：末行单张的处理",
+      "noteEn": "05-row-height-and-orphans.md",
+      "fromEn": "Orphan images"
+    },
+    {
+      "id": "AG-A07-01",
+      "media": "mp4",
+      "page": "gallery/handles",
+      "note": "06-画廊手柄.md",
+      "from": "四类手柄",
+      "action": "drag-column",
+      "maxMs": 6000,
+      "desc": "拖第二行分隔条：两格此消彼长",
+      "noteEn": "06-gallery-handles.md"
+    },
+    {
+      "id": "AG-A07-02",
+      "media": "mp4",
+      "page": "gallery/handles",
+      "note": "06-画廊手柄.md",
+      "from": "四类手柄",
+      "action": "drag-row",
+      "maxMs": 6000,
+      "desc": "拖行底横条：整行变高",
+      "noteEn": "06-gallery-handles.md"
+    },
+    {
+      "id": "AG-V07-01",
+      "media": "mp4",
+      "page": "gallery/handles",
+      "note": "06-画廊手柄.md",
+      "from": "锁定整行",
+      "action": "lock-row",
+      "maxMs": 12000,
+      "desc": "锁定整行：绑定后不拆并，再解除",
+      "noteEn": "06-gallery-handles.md"
+    },
+    {
+      "id": "AG-S08-01a",
+      "media": "still",
+      "page": "single/width",
+      "note": "07-宽度路由.md",
+      "from": "21:9 与 16:9",
+      "to": null,
+      "desc": "21:9 与 16:9 的宽度差",
+      "noteEn": "07-width-routing.md",
+      "fromEn": "21:9 and 16:9"
+    },
+    {
+      "id": "AG-S08-01b",
+      "media": "still",
+      "page": "single/width",
+      "note": "07-宽度路由.md",
+      "from": "1:1 与 9:16",
+      "to": null,
+      "desc": "1:1 与 9:16 的宽度差",
+      "noteEn": "07-width-routing.md",
+      "fromEn": "1:1 and 9:16"
+    },
+    {
+      "id": "AG-S09-01",
+      "media": "still",
+      "page": "single/float",
+      "note": "08-浮动与绕排.md",
+      "from": "文字绕排",
+      "to": null,
+      "desc": "浮动与文字绕排",
+      "noteEn": "08-float-and-wrap.md",
+      "fromEn": "Text wrapping"
+    },
+    {
+      "id": "AG-A10-01",
+      "media": "mp4",
+      "page": "single/resize",
+      "note": "09-拖宽与对齐.md",
+      "from": "拖角标",
+      "action": "drag-handle",
+      "maxMs": 8000,
+      "desc": "拖角标放大，再拖回原宽",
+      "noteEn": "09-resize-and-align.md"
+    },
+    {
+      "id": "AG-V10-01",
+      "media": "mp4",
+      "page": "single/resize",
+      "note": "09-拖宽与对齐.md",
+      "from": "对齐箭头",
+      "action": "align-arrow",
+      "maxMs": 12000,
+      "desc": "对齐箭头：右→中→左→中→右",
+      "noteEn": "09-resize-and-align.md"
+    },
+    {
+      "id": "AG-S11-01",
+      "media": "still",
+      "page": "annotations/syntax",
+      "note": "10-参数速查.md",
+      "from": "居中并指定宽度",
+      "to": null,
+      "desc": "居中并指定宽度",
+      "noteEn": "10-parameter-reference.md",
+      "fromEn": "Centred with a fixed width"
+    },
+    {
+      "id": "AG-S11-02",
+      "media": "still",
+      "page": "annotations/syntax",
+      "note": "10-参数速查.md",
+      "from": "右浮动并加大间距",
+      "to": null,
+      "desc": "右浮动并加大间距",
+      "noteEn": "10-parameter-reference.md",
+      "fromEn": "Right float with a larger gap"
+    },
+    {
+      "id": "AG-S11-03",
+      "media": "still",
+      "page": "annotations/syntax",
+      "note": "10-参数速查.md",
+      "from": "锁定行切分",
+      "to": null,
+      "desc": "锁定行切分的写法（语法视角）",
+      "noteEn": "10-parameter-reference.md",
+      "fromEn": "Locking a row split"
+    },
+    {
+      "id": "AG-S12-01",
+      "media": "still",
+      "page": "annotations/crop",
+      "note": "11-裁剪.md",
+      "from": "未裁剪",
+      "to": null,
+      "desc": "未裁剪的原图",
+      "noteEn": "11-cropping.md",
+      "fromEn": "Uncropped"
+    },
+    {
+      "id": "AG-S12-02",
+      "media": "still",
+      "page": "annotations/crop",
+      "note": "11-裁剪.md",
+      "from": "裁成方形",
+      "to": null,
+      "desc": "裁成方形",
+      "noteEn": "11-cropping.md",
+      "fromEn": "Cropped to a square"
+    },
+    {
+      "id": "AG-S12-03",
+      "media": "still",
+      "page": "annotations/crop",
+      "note": "11-裁剪.md",
+      "from": "取任意局部",
+      "to": null,
+      "desc": "取任意局部",
+      "noteEn": "11-cropping.md",
+      "fromEn": "Taking any sub-region"
+    },
+    {
+      "id": "AG-S12-04",
+      "media": "still",
+      "kind": "ui",
+      "page": "annotations/crop",
+      "note": "11-裁剪.md",
+      "target": "modal:crop",
+      "desc": "裁剪对话框：取景框与四个按钮",
+      "noteEn": "11-cropping.md"
+    },
+    {
+      "id": "AG-A13-01",
+      "media": "mp4",
+      "kind": "ui",
+      "page": "annotations/crop",
+      "note": "11-裁剪.md",
+      "target": "modal:crop",
+      "action": "crop-save",
+      "maxMs": 14000,
+      "desc": "裁剪全流程：进入、裁、保存、清除",
+      "noteEn": "11-cropping.md"
+    },
+    {
+      "id": "AG-S13-01",
+      "media": "still",
+      "page": "annotations/scopes",
+      "note": "12-嵌套作用域.md",
+      "from": "列表",
+      "to": null,
+      "desc": "列表内的图片作用域",
+      "noteEn": "12-nested-scopes.md",
+      "fromEn": "Lists"
+    },
+    {
+      "id": "AG-S13-02",
+      "media": "still",
+      "page": "annotations/scopes",
+      "note": "12-嵌套作用域.md",
+      "from": "表格",
+      "to": null,
+      "desc": "表格内的图片作用域",
+      "noteEn": "12-nested-scopes.md",
+      "fromEn": "Tables"
+    },
+    {
+      "id": "AG-S14-01",
+      "media": "still",
+      "kind": "ui",
+      "page": "annotations/dialog",
+      "note": "13-对话框与重置.md",
+      "target": "modal:annotation",
+      "desc": "说明与布局对话框",
+      "noteEn": "13-dialog-and-reset.md"
+    },
+    {
+      "id": "AG-S15-01",
+      "media": "still",
+      "kind": "ui",
+      "page": "templates/profiles",
+      "note": "14-布局模板.md",
+      "target": "settings:profiles",
+      "desc": "配置管理可操作区：模板列表、导入导出与行内操作",
+      "noteEn": "14-layout-templates.md"
+    },
+    {
+      "id": "AG-S17-01",
+      "media": "still",
+      "page": "templates/routing",
+      "note": "16-路由.md",
+      "from": "单图对照",
+      "to": null,
+      "desc": "单图路由对照",
+      "noteEn": "16-routing.md",
+      "fromEn": "Single image comparison"
+    },
+    {
+      "id": "AG-S17-02",
+      "media": "still",
+      "page": "templates/routing",
+      "note": "16-路由.md",
+      "from": "竖图对照",
+      "to": null,
+      "desc": "竖图路由对照",
+      "noteEn": "16-routing.md",
+      "fromEn": "Portrait comparison"
+    },
+    {
+      "id": "AG-S18-01",
+      "media": "still",
+      "kind": "ui",
+      "page": "export/dialog",
+      "note": "17-PDF导出.md",
+      "target": "modal:pdf",
+      "desc": "PDF 导出对话框：纸张参数与版式预览",
+      "noteEn": "17-pdf-export.md"
+    },
+    {
+      "id": "AG-V18-01",
+      "media": "mp4",
+      "kind": "ui",
+      "page": "export/dialog",
+      "note": "17-PDF导出.md",
+      "target": "modal:pdf",
+      "action": "preview-switch",
+      "maxMs": 15000,
+      "desc": "版式预览↔分页预览，分页滚到底",
+      "noteEn": "17-pdf-export.md"
+    },
+    {
+      "id": "AG-S19-01",
+      "media": "still",
+      "page": "export/pagination",
+      "note": "18-PDF分页.md",
+      "from": null,
+      "to": null,
+      "desc": "PDF 排版对比：关闭时整行被推到下一页、页尾留白；开启后整行同比例缩小、栏宽不变、贴住页脚",
+      "kind": "pdf",
+      "theme": "any",
+      "noteEn": "fixtures/pdf-pagination-row.en.md"
+    },
+    {
+      "id": "AG-S19-02",
+      "media": "still",
+      "page": "export/pagination",
+      "note": "18-PDF分页.md",
+      "from": null,
+      "to": null,
+      "desc": "PDF 排版对比：关闭时单图整体下移到下一页；开启后压缩贴底留在页内",
+      "kind": "pdf",
+      "theme": "any",
+      "noteEn": "fixtures/pdf-pagination-single.en.md"
+    },
+    {
+      "id": "AG-S19-03",
+      "media": "still",
+      "page": "export/pagination",
+      "note": "18-PDF分页.md",
+      "from": null,
+      "to": null,
+      "desc": "PDF 排版对比：关闭时各级标题连续排；开启「标题分页」后二级标题另起一页",
+      "kind": "pdf",
+      "theme": "any",
+      "noteEn": "fixtures/pdf-pagination-heading.en.md"
+    },
+    {
+      "id": "AG-S19-05",
+      "media": "still",
+      "page": "export/pagination",
+      "note": "18-PDF分页.md",
+      "noteEn": "fixtures/pdf-pagination-float.en.md",
+      "from": null,
+      "to": null,
+      "desc": "PDF 排版对比：共享浮动空间时正文留在本页、图片换页；按行文顺序对齐时图与旁文一起换页",
+      "kind": "pdf",
+      "theme": "any"
+    },
+    {
+      "id": "AG-S19-04",
+      "media": "still",
+      "page": "export/pagination",
+      "note": "18-PDF分页.md",
+      "noteEn": "fixtures/pdf-pagination-orphan.en.md",
+      "from": null,
+      "to": null,
+      "desc": "PDF 排版对比：关闭孤行控制时末页只剩两行；开启后上一页末几行被带回，总页数少一页",
+      "kind": "pdf",
+      "theme": "any"
+    },
+    {
+      "id": "AG-V19-01",
+      "media": "mp4",
+      "page": "export/pagination",
+      "note": "18-PDF分页.md",
+      "from": null,
+      "action": "pagination-diff",
+      "maxMs": 15000,
+      "desc": "分页预览逐项开关：右侧分页视图随开关重排并滚动对照",
+      "kind": "pdf",
+      "theme": "any",
+      "noteEn": "18-pdf-pagination.md"
+    },
+    {
+      "id": "AG-S20-01",
+      "media": "still",
+      "kind": "ui",
+      "page": "reference/settings",
+      "note": "19-设置页.md",
+      "target": "settings:overview",
+      "desc": "设置页七分区目录",
+      "noteEn": "19-settings.md"
+    },
+    {
+      "id": "AG-A20-02",
+      "media": "mp4",
+      "kind": "ui",
+      "page": "reference/settings",
+      "note": "19-设置页.md",
+      "target": "settings:search",
+      "action": "search-flow",
+      "maxMs": 14000,
+      "desc": "目录搜索全流程：开框、输入、回车定位、下一个匹配、清空、收起、回顶",
+      "noteEn": "19-settings.md"
+    },
+    {
+      "id": "AG-A20-01",
+      "media": "mp4",
+      "kind": "ui",
+      "page": "reference/settings",
+      "note": "19-设置页.md",
+      "target": "settings:search",
+      "action": "search-jump",
+      "maxMs": 8000,
+      "desc": "搜索实时收敛：输入即过滤，清空即复原",
+      "noteEn": "19-settings.md"
+    },
+    {
+      "id": "AG-S22-01",
+      "media": "still",
+      "kind": "ui",
+      "page": "reference/commands",
+      "note": "20-命令与撤销.md",
+      "target": "palette",
+      "desc": "命令面板：四条 AutoGallery 命令",
+      "noteEn": "20-commands-and-undo.md"
+    },
+    {
+      "id": "AG-S22-02",
+      "media": "still",
+      "kind": "ui",
+      "page": "reference/commands",
+      "note": "20-命令与撤销.md",
+      "target": "modal:reset-confirm",
+      "desc": "恢复默认的二次确认",
+      "noteEn": "20-commands-and-undo.md"
+    },
+    {
+      "id": "AG-V00-01",
+      "media": "mp4",
+      "page": "guide/quick-start",
+      "note": "00-效果总览.md",
+      "from": null,
+      "action": "scroll-overview",
+      "maxMs": 9000,
+      "desc": "通读总览：平滑滚动一屏再返回",
+      "noteEn": "00-overview.md"
+    },
+    {
+      "id": "AG-A02-01",
+      "media": "mp4",
+      "page": "guide/quick-start",
+      "note": "01-五分钟上手.md",
+      "from": null,
+      "action": "toggle-plugin",
+      "maxMs": 22000,
+      "desc": "关闭插件：图片退回同段落内联排布",
+      "noteEn": "01-quick-start.md"
+    }
+  ],
+  "retired": [
+    {
+      "id": "AG-S00-01",
+      "reason": "README 阅读前提，纯文字"
+    },
+    {
+      "id": "AG-S01-01",
+      "reason": "锚定「原理」，纯文字，从未产出"
+    },
+    {
+      "id": "AG-S01-02",
+      "reason": "锚定「原理」，纯文字"
+    },
+    {
+      "id": "AG-S06-03",
+      "reason": "浮动终止，整节文字 + 无关代码块"
+    },
+    {
+      "id": "AG-S11-04",
+      "reason": "旧号，能力矩阵是表格；原编号，isolate/exclude 截图取消，编号顺延"
+    },
+    {
+      "id": "AG-S12-02",
+      "reason": "旧号，写法是 JSON",
+      "reusedBy": "AG-S12-02"
+    },
+    {
+      "id": "AG-S13-02",
+      "reason": "旧号，匹配规则是表格；表格单元格截图：表格被图片撑变形，信息密度低于直接读表格",
+      "reusedBy": "AG-S13-02"
+    },
+    {
+      "id": "AG-S07-01",
+      "reason": "四类手柄分散在不同悬停态，单帧讲不清；由 AG-A07-01 / AG-A07-02 覆盖"
+    },
+    {
+      "id": "AG-S20-03",
+      "reason": "数值项外观改用正文 + lucide 图标说明，不再截图"
+    }
+  ],
+  "meta": {
+    "numbering": "AG-<S|A|V><页序号>-<序号>[a|b]；页序号 = 笔记 order + 1，例外：order 20 → 22、order 21 → 23（21 曾被废弃方案占用）。编号不带语言与主题后缀",
+    "anchors": "from 为空表示从文档顶部开始；to 为空表示到本节最后一个块。界面类素材无锚点，靠 desc 说明取景",
+    "matrix": "每条素材都有 lang × theme 四格，落在 media/<lang>/<theme>/ 下；四格各自完成到哪一步只看 media/manifest.json，本文件不记 status",
+    "themes": "主题只改配色不改布局，同一套坐标与动作参数重录；深色 = obsidian，浅色 = moonstone",
+    "kinds": "kind 表示拍摄通道：缺省 = 内容镜头（shoot-batch）；ui = 界面镜头（winapp/scenes）；pdf = 由 PDF 导出渲染，不在窗口里截",
+    "noteEn": "内容镜头的 note 是中文笔记路径。英文版内容静帧需要 noteEn（对应英文笔记），未填则该镜头在 en 下拒绝拍摄，避免把中文画面挂到英文目录；kind 为 pdf 时 note/noteEn 是溯源标签，实际拍摄源是 fixtures/pdf-pagination-*.md；kind 为 pdf 时 note/noteEn 是溯源标签，实际拍摄源是 fixtures/pdf-pagination-*.md",
+    "themeAny": "theme 为 any 的素材与主题无关（PDF 渲染、拼板 poster），只按语言分；路径落在 media/<lang>/any/ 下",
+    "posters": "poster 只区分语言：media/<lang>/any/posters/<P-ID>.apng，取 dark 左半 + light 右半拼板；1000×600 / 8bit / 72dpi / APNG（GitHub 会把动态 WebP 转码掉帧）。整页滚动 318 帧实测 45MB，故回放降到 10fps、约 5MB；文档站当前另用静态 JPG 1200×800 作为首帧回退（AG-P00-01.jpg）",
+    "pdfFixtures": "PDF 对照素材来自 fixtures/pdf-pagination*.md：pdf-stills.mjs 导出开关两版 PDF 到 media/<lang>/any/pdf/，再用 pdftoppm 渲页、magick 拼板并编码 WebP；每张图写盘前先过页号/图片数断言"
+  },
+  "textOnly": [
+    {
+      "note": "02-五个核心概念.md",
+      "page": "guide/concepts",
+      "reason": "五条概念均为文字陈述，配图只会重复正文"
+    },
+    {
+      "note": "15-导入导出.md",
+      "page": "templates/transfer",
+      "reason": "讲文件格式与校验，界面部分已由 AG-S15-01 覆盖"
+    },
+    {
+      "note": "21-容易误解的行为.md",
+      "page": "reference/pitfalls",
+      "reason": "答疑列表，无稳定视觉对象"
+    }
+  ],
+  "deferred": [
+    {
+      "id": "AG-S12-04",
+      "reason": "裁剪对话框静帧：控件由参数页文字覆盖，对话框在裁剪动效中可见"
+    },
+    {
+      "id": "AG-A13-01",
+      "reason": "裁剪全流程动效：需窗口录制；本轮以 AG-S12-01..03 静帧与裁剪页文字覆盖"
+    },
+    {
+      "id": "AG-A07-01",
+      "reason": "拖分隔条动效：需原生输入注入；手势页文字与 AG-S06-01/02 静帧覆盖"
+    },
+    {
+      "id": "AG-A07-02",
+      "reason": "拖行高横条动效：同上"
+    },
+    {
+      "id": "AG-V07-01",
+      "reason": "锁定整行动效：同上"
+    },
+    {
+      "id": "AG-A10-01",
+      "reason": "拖角标动效：同上"
+    },
+    {
+      "id": "AG-V10-01",
+      "reason": "对齐箭头动效：同上"
+    },
+    {
+      "id": "AG-S14-01",
+      "reason": "说明与布局对话框：已由对话框页五项表格与 AG-S13-01 覆盖"
+    },
+    {
+      "id": "AG-S15-01",
+      "reason": "配置管理可操作区：设置页已由 AG-S20-01 覆盖"
+    },
+    {
+      "id": "AG-S18-01",
+      "reason": "PDF 导出对话框：本轮分页专题以 PDF 渲染对照为准，对话框由导出页文字覆盖"
+    },
+    {
+      "id": "AG-V18-01",
+      "reason": "版式/分页预览切换动效：本轮暂缓，分页页以 5 张静帧覆盖"
+    },
+    {
+      "id": "AG-V19-01",
+      "reason": "分页预览逐项开关动效：本轮以 AG-S19-01..05 静帧覆盖"
+    },
+    {
+      "id": "AG-S20-01",
+      "reason": "设置页七分区目录：设置页文字与搜索说明已足够"
+    },
+    {
+      "id": "AG-A20-01",
+      "reason": "目录搜索实时收敛动效：快捷键与行为表已覆盖"
+    },
+    {
+      "id": "AG-A20-02",
+      "reason": "目录搜索全流程动效：同上"
+    },
+    {
+      "id": "AG-S22-01",
+      "reason": "命令面板四条命令：命令表已覆盖"
+    },
+    {
+      "id": "AG-S22-02",
+      "reason": "恢复默认二次确认：命令页文字已覆盖"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "reviewBlockRef": "T-207#R-001",
+  "taskId": "T-207",
+  "verdict": "passed",
+  "content": "全量验证通过：check:demo、check:docs、manifest-check（0 警告）、docs:sync/check/build 均成功；媒体矩阵 176/176，无超限文件。T-203 至 T-206 全部完成，文档本地构建通过、未部署。"
+}

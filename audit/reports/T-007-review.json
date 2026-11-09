@@ -1,0 +1,6 @@
+{
+  "reviewBlockRef": "T-007#R-001",
+  "taskId": "T-007",
+  "verdict": "passed",
+  "content": "规格四处事实错误已修：pdf-pagination 三段式、validation donor/孤行边界、layout-core 每行上限语境、live-preview 行高条位置与降级级数。figures.json 修正 25→26、templates/import、poster meta、S19 新增 2 条与 noteEn、17 条 deferred；build-manifest 176 格，manifest-check 通过。"
+}

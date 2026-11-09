@@ -1,0 +1,6 @@
+{
+  "reviewBlockRef": "T-202#R-001",
+  "taskId": "T-202",
+  "verdict": "passed",
+  "content": "matrix.md 覆盖 47 条素材 × 176 格：zh/dark 41/41、zh/light 0/41、en/dark 0/41、en/light 0/41、zh/any 2/6、en/any 0/6，合计 43/176，与 manifest-check 一致。每条缺口标注页面、媒介与拍摄方式（PDF 渲染 / CDP 静帧 / winapp 动效），并列出缺失的具体格；47 条有缺口，无中文画面被排进英文格。"
+}

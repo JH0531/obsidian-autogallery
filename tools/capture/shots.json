@@ -1,0 +1,436 @@
+[
+  {
+    "id": "AG-V00-01",
+    "media": "mp4",
+    "note": "00-效果总览.md",
+    "chapter": 0,
+    "order": 0,
+    "anchor": "效果总览",
+    "readme": "README.md#演示库"
+  },
+  {
+    "id": "AG-S00-01",
+    "media": "still",
+    "note": "README.md",
+    "chapter": 0,
+    "order": 0,
+    "anchor": "阅读前提",
+    "readme": "README.md#演示库"
+  },
+  {
+    "id": "AG-S01-01",
+    "media": "still",
+    "note": "01-从原生排版到画廊.md",
+    "chapter": 1,
+    "order": 1,
+    "anchor": "原理",
+    "readme": "README.md#目的"
+  },
+  {
+    "id": "AG-S01-02",
+    "media": "still",
+    "note": "01-从原生排版到画廊.md",
+    "chapter": 1,
+    "order": 1,
+    "anchor": "原理",
+    "readme": "README.md#目的"
+  },
+  {
+    "id": "AG-A01-01",
+    "media": "apng",
+    "note": "01-从原生排版到画廊.md",
+    "chapter": 1,
+    "order": 1,
+    "anchor": "原理",
+    "readme": "README.md#目的"
+  },
+  {
+    "id": "AG-S02-01",
+    "media": "still",
+    "note": "02-图片参数速查.md",
+    "chapter": 1,
+    "order": 2,
+    "anchor": "居中并指定宽度"
+  },
+  {
+    "id": "AG-S02-02",
+    "media": "still",
+    "note": "02-图片参数速查.md",
+    "chapter": 1,
+    "order": 2,
+    "anchor": "右浮动并加大间距"
+  },
+  {
+    "id": "AG-S02-03",
+    "media": "still",
+    "note": "02-图片参数速查.md",
+    "chapter": 1,
+    "order": 2,
+    "anchor": "隔离与排除"
+  },
+  {
+    "id": "AG-S02-04",
+    "media": "still",
+    "note": "02-图片参数速查.md",
+    "chapter": 1,
+    "order": 2,
+    "anchor": "锁定行切分"
+  },
+  {
+    "id": "AG-S03-01",
+    "media": "still",
+    "note": "03-画廊分组规则.md",
+    "chapter": 2,
+    "order": 3,
+    "anchor": "零空行",
+    "readme": "README.md#画廊"
+  },
+  {
+    "id": "AG-S03-02",
+    "media": "still",
+    "note": "03-画廊分组规则.md",
+    "chapter": 2,
+    "order": 3,
+    "anchor": "正文断组"
+  },
+  {
+    "id": "AG-S03-03",
+    "media": "still",
+    "note": "03-画廊分组规则.md",
+    "chapter": 2,
+    "order": 3,
+    "anchor": "三个空行"
+  },
+  {
+    "id": "AG-S04-01",
+    "media": "still",
+    "note": "04-画廊分行与混合比例.md",
+    "chapter": 2,
+    "order": 4,
+    "anchor": "两张",
+    "readme": "README.md#画廊"
+  },
+  {
+    "id": "AG-S04-02",
+    "media": "still",
+    "note": "04-画廊分行与混合比例.md",
+    "chapter": 2,
+    "order": 4,
+    "anchor": "混合宽高比"
+  },
+  {
+    "id": "AG-S04-03",
+    "media": "still",
+    "note": "04-画廊分行与混合比例.md",
+    "chapter": 2,
+    "order": 4,
+    "anchor": "七张（锁定为 5 + 2）"
+  },
+  {
+    "id": "AG-S05-01",
+    "media": "still",
+    "note": "05-行高上限与孤儿图片.md",
+    "chapter": 2,
+    "order": 5,
+    "anchor": "行高上限"
+  },
+  {
+    "id": "AG-S05-02",
+    "media": "still",
+    "note": "05-行高上限与孤儿图片.md",
+    "chapter": 2,
+    "order": 5,
+    "anchor": "孤儿图片"
+  },
+  {
+    "id": "AG-S05-03",
+    "media": "still",
+    "note": "05-行高上限与孤儿图片.md",
+    "chapter": 2,
+    "order": 5,
+    "anchor": "三档对照"
+  },
+  {
+    "id": "AG-S06-01",
+    "media": "still",
+    "note": "06-单图比例与浮动绕排.md",
+    "chapter": 3,
+    "order": 6,
+    "anchor": "四档比例"
+  },
+  {
+    "id": "AG-S06-02",
+    "media": "still",
+    "note": "06-单图比例与浮动绕排.md",
+    "chapter": 3,
+    "order": 6,
+    "anchor": "文字绕排"
+  },
+  {
+    "id": "AG-S06-03",
+    "media": "still",
+    "note": "06-单图比例与浮动绕排.md",
+    "chapter": 3,
+    "order": 6,
+    "anchor": "浮动在哪里终止"
+  },
+  {
+    "id": "AG-A07-01",
+    "media": "apng",
+    "note": "07-画廊手柄与参数重写.md",
+    "chapter": 4,
+    "order": 7,
+    "anchor": "拖动分隔条",
+    "readme": "README.md#画廊"
+  },
+  {
+    "id": "AG-A07-02",
+    "media": "apng",
+    "note": "07-画廊手柄与参数重写.md",
+    "chapter": 4,
+    "order": 7,
+    "anchor": "拖动行高条"
+  },
+  {
+    "id": "AG-V07-01",
+    "media": "mp4",
+    "note": "07-画廊手柄与参数重写.md",
+    "chapter": 4,
+    "order": 7,
+    "anchor": "锁定整行"
+  },
+  {
+    "id": "AG-A08-01",
+    "media": "apng",
+    "note": "08-拖宽与对齐.md",
+    "chapter": 4,
+    "order": 8,
+    "anchor": "拖角标"
+  },
+  {
+    "id": "AG-V08-01",
+    "media": "mp4",
+    "note": "08-拖宽与对齐.md",
+    "chapter": 4,
+    "order": 8,
+    "anchor": "对齐箭头"
+  },
+  {
+    "id": "AG-S09-01",
+    "media": "still",
+    "note": "09-裁剪参数.md",
+    "chapter": 5,
+    "order": 9,
+    "anchor": "未裁剪"
+  },
+  {
+    "id": "AG-S09-02",
+    "media": "still",
+    "note": "09-裁剪参数.md",
+    "chapter": 5,
+    "order": 9,
+    "anchor": "裁成方形"
+  },
+  {
+    "id": "AG-S09-03",
+    "media": "still",
+    "note": "09-裁剪参数.md",
+    "chapter": 5,
+    "order": 9,
+    "anchor": "取任意局部"
+  },
+  {
+    "id": "AG-S10-01",
+    "media": "still",
+    "lang": "ui",
+    "note": "10-裁剪对话框.md",
+    "chapter": 5,
+    "order": 10,
+    "anchor": "操作"
+  },
+  {
+    "id": "AG-A10-01",
+    "media": "apng",
+    "note": "10-裁剪对话框.md",
+    "chapter": 5,
+    "order": 10,
+    "anchor": "操作"
+  },
+  {
+    "id": "AG-S11-01",
+    "media": "still",
+    "note": "11-嵌套作用域.md",
+    "chapter": 6,
+    "order": 11,
+    "anchor": "列表：同项可并排，绝不跨项"
+  },
+  {
+    "id": "AG-S11-02",
+    "media": "still",
+    "note": "11-嵌套作用域.md",
+    "chapter": 6,
+    "order": 11,
+    "anchor": "表格：只认裁剪与排除"
+  },
+  {
+    "id": "AG-S11-03",
+    "media": "still",
+    "note": "11-嵌套作用域.md",
+    "chapter": 6,
+    "order": 11,
+    "anchor": "Callout：只认领，不装饰"
+  },
+  {
+    "id": "AG-S11-04",
+    "media": "still",
+    "note": "11-嵌套作用域.md",
+    "chapter": 6,
+    "order": 11,
+    "anchor": "能力矩阵"
+  },
+  {
+    "id": "AG-S12-01",
+    "media": "still",
+    "lang": "ui",
+    "note": "12-布局模板Profile.md",
+    "chapter": 7,
+    "order": 12,
+    "anchor": "三条规则的样子"
+  },
+  {
+    "id": "AG-S12-02",
+    "media": "still",
+    "note": "12-布局模板Profile.md",
+    "chapter": 7,
+    "order": 12,
+    "anchor": "写法"
+  },
+  {
+    "id": "AG-S13-01",
+    "media": "still",
+    "note": "13-Frontmatter路由.md",
+    "chapter": 7,
+    "order": 13,
+    "anchor": "单图对照"
+  },
+  {
+    "id": "AG-S13-02",
+    "media": "still",
+    "note": "13-Frontmatter路由.md",
+    "chapter": 7,
+    "order": 13,
+    "anchor": "匹配规则"
+  },
+  {
+    "id": "AG-S14-01",
+    "media": "still",
+    "lang": "ui",
+    "note": "14-PDF导出对话框.md",
+    "chapter": 8,
+    "order": 14,
+    "anchor": "两种预览"
+  },
+  {
+    "id": "AG-V14-01",
+    "media": "mp4",
+    "note": "14-PDF导出对话框.md",
+    "chapter": 8,
+    "order": 14,
+    "anchor": "两种预览"
+  },
+  {
+    "id": "AG-S15-01",
+    "media": "still",
+    "note": "15-PDF分页优化.md",
+    "chapter": 8,
+    "order": 15,
+    "anchor": "画廊行不拆页"
+  },
+  {
+    "id": "AG-S15-02",
+    "media": "still",
+    "note": "15-PDF分页优化.md",
+    "chapter": 8,
+    "order": 15,
+    "anchor": "单图贴底压缩"
+  },
+  {
+    "id": "AG-S15-03",
+    "media": "still",
+    "note": "15-PDF分页优化.md",
+    "chapter": 8,
+    "order": 15,
+    "anchor": "标题分页"
+  },
+  {
+    "id": "AG-V15-01",
+    "media": "mp4",
+    "note": "15-PDF分页优化.md",
+    "chapter": 8,
+    "order": 15,
+    "anchor": "其它边界"
+  },
+  {
+    "id": "AG-S16-01",
+    "media": "still",
+    "lang": "ui",
+    "note": "16-设置页导览.md",
+    "chapter": 9,
+    "order": 16,
+    "anchor": "七个分区"
+  },
+  {
+    "id": "AG-S16-02",
+    "media": "still",
+    "lang": "ui",
+    "note": "16-设置页导览.md",
+    "chapter": 9,
+    "order": 16,
+    "anchor": "目录与搜索"
+  },
+  {
+    "id": "AG-S16-03",
+    "media": "still",
+    "lang": "ui",
+    "note": "16-设置页导览.md",
+    "chapter": 9,
+    "order": 16,
+    "anchor": "数值项"
+  },
+  {
+    "id": "AG-A16-01",
+    "media": "apng",
+    "lang": "ui",
+    "note": "16-设置页导览.md",
+    "chapter": 9,
+    "order": 16,
+    "anchor": "数值项"
+  },
+  {
+    "id": "AG-S17-01",
+    "media": "still",
+    "lang": "ui",
+    "note": "17-命令与撤销.md",
+    "chapter": 9,
+    "order": 17,
+    "anchor": "四条命令"
+  },
+  {
+    "id": "AG-S17-02",
+    "media": "still",
+    "lang": "ui",
+    "note": "17-命令与撤销.md",
+    "chapter": 9,
+    "order": 17,
+    "anchor": "一条命令背后的三步"
+  },
+  {
+    "id": "AG-S17-03",
+    "media": "still",
+    "lang": "ui",
+    "note": "17-命令与撤销.md",
+    "chapter": 9,
+    "order": 17,
+    "anchor": "四条命令"
+  }
+]
