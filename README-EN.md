@@ -14,13 +14,11 @@
 
 <img src="assets/demo/overview-en-dark.webp" alt="AutoGallery English overview" width="1200">
 
-<table>
-  <tr>
-    <td align="center" width="48%"><a href="https://www.autogallery.run.place/en/"><img src="assets/demo/buttons/docs-en.svg" width="280" height="56" alt="Documentation"></a></td>
-    <td width="4%">&nbsp;</td>
-    <td align="center" width="48%"><a href="https://github.com/JH0531/obsidian-autogallery/archive/refs/heads/demo-en-vault.zip"><img src="assets/demo/buttons/demo-en.svg" width="280" height="56" alt="English demo vault"></a></td>
-  </tr>
-</table>
+<p align="center">
+  <a href="https://www.autogallery.run.place/en/"><img src="assets/demo/buttons/docs-en.svg" width="280" height="56" alt="Documentation"></a>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="https://github.com/JH0531/obsidian-autogallery/archive/refs/heads/demo-en-vault.zip"><img src="assets/demo/buttons/demo-en.svg" width="280" height="56" alt="English demo vault"></a>
+</p>
 
 </div>
 
