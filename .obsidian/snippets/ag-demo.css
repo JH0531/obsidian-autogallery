@@ -1,0 +1,30 @@
+/* AutoGallery 演示库视觉基线。
+   常规使用时只固定字号与行宽；隐藏标签栏/状态栏/滚动条的规则只在录制模式
+   （body.ag-recording）下生效，录制脚本自己加上这个类，结束后立即移除。 */
+
+body {
+  --font-text-size: 16px;
+}
+
+.markdown-preview-view,
+.markdown-source-view {
+  --file-line-width: 760px;
+}
+
+/* 录制模式：画面里只保留正文。
+   需要同时隐藏标签栏、视图头（返回/文件名/编辑图标）、左侧功能区、
+   状态栏、窗口控制按钮与滚动条。 */
+body.ag-recording .workspace-tabs .workspace-tab-header-container,
+body.ag-recording .view-header,
+body.ag-recording .workspace-ribbon,
+body.ag-recording .status-bar,
+body.ag-recording .titlebar,
+body.ag-recording .titlebar-button-container {
+  display: none !important;
+}
+
+body.ag-recording .markdown-preview-view::-webkit-scrollbar,
+body.ag-recording .markdown-source-view::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+}
