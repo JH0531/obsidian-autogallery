@@ -1,7 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 64" role="img" aria-label="Ko-fi">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 164 64" role="img" aria-label="Ko-fi">
   <filter id="s" x="-5%" y="-5%" width="110%" height="120%"><feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="#000000" flood-opacity="0.18"/></filter>
-  <rect x="1.25" y="1.25" width="187.5" height="61.5" rx="8" fill="#24292f" stroke="#8a5cf6" stroke-width="2.5" filter="url(#s)"/>
-  <text x="62" y="38" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="16" font-weight="600" fill="#ffffff">Ko-fi</text>
-  <g transform="translate(120 24) scale(0.667)" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v2"/><path d="M14 2v2"/><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path d="M6 2v2"/></g>
-  
+  <rect x="1.25" y="1.25" width="161.5" height="61.5" rx="8" fill="#24292f" stroke="#8a5cf6" stroke-width="2.5" filter="url(#s)"/>
+  <text x="88.7" y="38" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="16" font-weight="600" fill="#ffffff">Ko-fi</text>
+  <g transform="translate(95.7 24) scale(0.667)" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v2"/><path d="M14 2v2"/><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path d="M6 2v2"/></g>
 </svg>

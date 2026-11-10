@@ -15,13 +15,13 @@
 <img src="assets/demo/overview-en-dark.webp" alt="AutoGallery English overview" width="1200">
 
 <p align="center">
-  <a href="https://www.autogallery.run.place/en/"><img src="assets/demo/buttons/docs-en.svg" width="190" height="64" alt="Documentation"></a>
+  <a href="https://www.autogallery.run.place/en/"><img src="assets/demo/buttons/docs-en.svg" width="164" height="64" alt="Documentation"></a>
   &nbsp;&nbsp;
-  <a href="https://github.com/JH0531/obsidian-autogallery/archive/refs/heads/demo-en-vault.zip"><img src="assets/demo/buttons/demo-en.svg" width="190" height="64" alt="English demo vault"></a>
+  <a href="https://github.com/JH0531/obsidian-autogallery/archive/refs/heads/demo-en-vault.zip"><img src="assets/demo/buttons/demo-en.svg" width="164" height="64" alt="Demo vault"></a>
   &nbsp;&nbsp;
-  <a href="https://ko-fi.com/jh0531"><img src="assets/demo/buttons/kofi.svg" width="190" height="64" alt="Ko-fi"></a>
+  <a href="https://ko-fi.com/jh0531"><img src="assets/demo/buttons/kofi.svg" width="164" height="64" alt="Ko-fi"></a>
   &nbsp;&nbsp;
-  <a href="https://www.opensponsor.dpdns.org/"><img src="assets/demo/buttons/sponsor-en.svg" width="190" height="64" alt="Sponsor (WeChat, Alipay, PayPal)"></a>
+  <a href="https://www.opensponsor.dpdns.org/"><img src="assets/demo/buttons/sponsor-en.svg" width="164" height="64" alt="Sponsor (WeChat, Alipay, PayPal)"></a>
 </p>
 
 </div>
