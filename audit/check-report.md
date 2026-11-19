@@ -1,6 +1,6 @@
 # Showcase claim check
 
-Generated 2026-11-09T20:56:48.941Z · commit 9500e23
+Generated 2026-11-19T03:24:17.437Z · commit 0b3c63e
 
 **0 / 8 checks failed · 0 findings**
 
@@ -17,7 +17,7 @@ Generated 2026-11-09T20:56:48.941Z · commit 9500e23
 
 ## 断言台账中无被代码证伪的条目
 
-- 共 1469 条断言，0 条判为错误。
+- 共 1468 条断言，0 条判为错误。
 
 无失败项。
 
@@ -63,7 +63,7 @@ Generated 2026-11-09T20:56:48.941Z · commit 9500e23
 
 ## 事实表与当前提交一致
 
-- 当前 9500e23。
+- 当前 0b3c63e。
 
 无失败项。
 
