@@ -351,6 +351,14 @@ Read this before touching `editor-extension.js`, `embed-actions.js`,
   with `display: none !important`; it is excluded from measurements but its
   native inline box otherwise creates phantom vertical whitespace.
 
+- An image line's trailing whitespace (a two-space Markdown hard break) must not
+  contribute a line box either. Hide `.cm-trailing-space-a`,
+  `.cm-trailing-space-b` and `.cm-trailing-space-new-line` inside
+  `.ag-cm-image-line`: CodeMirror renders them as inline marks, and beside a
+  block-level embed they form a phantom line between the picture and the caption
+  widget inserted at `line.to` — the caption then reads as one blank line lower
+  than the picture. The marks carry no content in an image line.
+
 - The direct wrapper around a Live Preview caption widget must have zero bottom
   margin and padding. Only `.ag-cm-caption` owns the configured caption gap;
   Obsidian may use either `.cm-widgetBuffer` or a plain `div` wrapper. Establish

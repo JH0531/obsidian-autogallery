@@ -885,6 +885,15 @@ export function createAutoGalleryEditorExtension(getSettings = () => ({}), { app
       margin: "0 !important",
       padding: "0 !important"
     },
+    // A Markdown hard break leaves two spaces at the end of an image line.
+    // CodeMirror renders them as inline trailing-space marks; beside a
+    // block-level embed they form a line box of their own and push the
+    // caption widget (inserted at line.to) one blank line down. They carry
+    // no content in an image line, so remove them from layout the same way
+    // the widget buffer and the source <br> are removed.
+    ".cm-line.ag-cm-image-line .cm-trailing-space-a, .cm-line.ag-cm-image-line .cm-trailing-space-b, .cm-line.ag-cm-image-line .cm-trailing-space-new-line": {
+      display: "none !important"
+    },
     ".cm-line.ag-cm-image-line .ag-cm-caption": {
       display: "block",
       width: "var(--ag-embed-width, 100%)",
