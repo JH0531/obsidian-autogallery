@@ -1,0 +1,10 @@
+{
+  "showStatusBar": false,
+  "attachmentFolderPath": "assets",
+  "uriCallbacks": true,
+  "alwaysUpdateLinks": true,
+  "showUnsupportedFiles": true,
+  "showInlineTitle": false,
+  "propertiesInDocument": "hidden",
+  "safeMode": false
+}

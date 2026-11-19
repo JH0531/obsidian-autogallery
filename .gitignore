@@ -1,0 +1,10 @@
+# 录制与预览产物只留在本地，不随演示库分发。
+media/
+.cache/
+.tools/
+.ag-run.js
+.ag-args.json
+
+# 会话状态与派生缓存：每位用户打开时会重新生成。
+.obsidian/workspace.json
+.obsidian/plugins/obsidian-autogallery/image-sizes.json
